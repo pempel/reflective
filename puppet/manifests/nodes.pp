@@ -1,5 +1,5 @@
-node "reflective" {
-  file { "/tmp/hello":
+node 'reflective' {
+  file { '/tmp/hello':
     content => "Hello, world\n",
   }
 }
