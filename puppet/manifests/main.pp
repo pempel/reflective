@@ -1,1 +1,1 @@
-import "nodes.pp"
+include nginx
