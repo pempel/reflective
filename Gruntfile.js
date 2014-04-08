@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     compass: {
       live: {
         options: {
-          sassDir: "assets/stylesheets",
+          sassDir: "public/stylesheets",
           cssDir: "public/stylesheets",
           imagesDir: "public/images",
           outputStyle: "compressed"
@@ -13,7 +13,10 @@ module.exports = function(grunt) {
     uglify: {
       live: {
         files: {
-          "public/javascripts/main.js": ["assets/javascripts/**/*.js"]
+          "public/javascripts/main.min.js": [
+            "public/javascripts/**/*.js",
+            "!public/javascripts/**/*.min.js",
+          ]
         }
       }
     }
