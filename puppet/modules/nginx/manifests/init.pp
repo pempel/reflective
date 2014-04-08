@@ -3,8 +3,15 @@ class nginx {
     ensure => present,
   }
   user { "deployer":
-    ensure => present,
-    gid => "deployers",
+    ensure  => present,
+    gid     => "deployers",
     require => Group["deployers"],
+  }
+  package { "nginx":
+    ensure => installed,
+  }
+  service { "nginx":
+    ensure => running,
+    enable => true,
   }
 }
