@@ -1,0 +1,12 @@
+server {
+  listen 80;
+  server_name <%= nginx_server_name %>;
+
+  error_log  <%= nginx_log_path %>/error.log info;
+  access_log <%= nginx_log_path %>/access.log;
+
+  location / {
+    root <%= deploy_to %>/<%= current_path %>/public/;
+    index index.html;
+  }
+}
