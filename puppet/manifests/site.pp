@@ -1,1 +1,2 @@
+include git
 include nginx
