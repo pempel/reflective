@@ -1,5 +1,5 @@
 namespace :environment do
-  desc ""
+  desc "Sets parameters for the base environment."
   task :base do
     set :repository,             "https://github.com/pempel/reflective.git"
     set :branch,                 "deployment"
@@ -7,6 +7,7 @@ namespace :environment do
     set :deploy_to,              "/var/apps/#{app}"
     set :shared_log_path,        "#{deploy_to}/#{shared_path}/log"
     set :shared_config_path,     "#{deploy_to}/#{shared_path}/config"
+    set :puppet_modules_path,    "#{deploy_to}/#{current_path}/config/puppet/modules"
     set :puppet_manifests_path,  "#{deploy_to}/#{current_path}/config/puppet/manifests"
 
     set :nginx_user,             "www-data"
@@ -19,7 +20,7 @@ namespace :environment do
     set :nginx_server_name,      ".#{app}.app"
   end
 
-  desc ""
+  desc "Sets parameters for the test environment."
   task :test => :base do
     set :user,            "vagrant"
     set :domain,          "reflective.app"
@@ -32,7 +33,7 @@ namespace :environment do
   end
 end
 
-desc ""
+desc "Sets parameters for the ENV['env'] environment."
 task :environment do
   invoke "environment:#{ENV['env'] || :test}"
 end

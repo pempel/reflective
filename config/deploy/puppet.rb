@@ -2,13 +2,17 @@ require_relative "environment"
 require_relative "extra"
 
 namespace :puppet do
-  desc "Install puppet if it is not installed yet."
+  desc "Installs puppet if it is not installed yet."
   task :install => :environment do
     install_package("puppet")
   end
 
-  desc "Apply the site.pp puppet manifest"
+  desc "Applies the site.pp manifest"
   task :apply => :environment do
-    queue %{puppet apply "#{puppet_manifests_path}/site.pp"}
+    manifest = "#{puppet_manifests_path}/site.pp"
+    options =  "--modulepath #{puppet_modules_path}"
+    queue %{echo "-----> Applying site.pp"}
+    queue %{sudo puppet apply #{manifest} #{options} > /dev/null}
+    queue %{echo "----->   Succeed."}
   end
 end

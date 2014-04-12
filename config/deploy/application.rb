@@ -7,7 +7,7 @@ require_relative "nginx"
 require_relative "git"
 
 namespace :application do
-  desc "Configure the environment."
+  desc "Configures the environment."
   task :configure => :environment do
     invoke "timezone:moscow:set"
     invoke "puppet:install"
