@@ -14,13 +14,13 @@ namespace :nginx do
 
     desc "Parses the nginx config file and uploads it to the server"
     task :upload => :environment do
-      queue %{echo "-----> Put nginx.conf to #{nginx_config}"}
+      queue %{echo "-----> Moving nginx.conf to #{nginx_config}"}
       queue %{echo "#{parse_template("nginx.conf.erb")}" > "#{nginx_config}"}
     end
 
     desc "Creates symbolic links to the nginx config file."
     task :link => :environment do
-      queue %{echo "-----> Create symbolic links to nginx.conf"}
+      queue %{echo "-----> Creating symbolic links to nginx.conf"}
       queue echo_cmd %{sudo ln -fs "#{nginx_config}" "#{nginx_available_config}"}
       queue echo_cmd %{sudo ln -fs "#{nginx_config}" "#{nginx_enabled_config}"}
     end

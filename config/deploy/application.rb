@@ -14,10 +14,10 @@ namespace :application do
     invoke "git:install"
   end
 
-  desc "Sets up the folder structure."
+  desc "Sets up the directory structure."
   task :setup => :configure do
     queue %{
-      echo "-----> Setting up #{app}" &&
+      echo "-----> Setting up the #{app} application directory structure" &&
       if [ -d #{deploy_to} ]; then
         echo "----->   Already set up.";
       else
@@ -27,10 +27,7 @@ namespace :application do
         #{echo_cmd %{sudo mkdir -p "#{nginx_config_path}"}} &&
         #{echo_cmd %{sudo chown -R #{user} "#{deploy_to}"}} &&
         #{echo_cmd %{sudo chown -R "#{nginx_user}" "#{nginx_log_path}"}}
-        echo "" &&
-        #{echo_cmd %{ls -la "#{deploy_to}"}} &&
-        echo "" &&
-        echo "-----> Done."
+        echo "----->   Succeed."
       fi
     }
   end

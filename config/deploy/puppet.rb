@@ -13,6 +13,5 @@ namespace :puppet do
     options =  "--modulepath #{puppet_modules_path}"
     queue %{echo "-----> Applying site.pp"}
     queue %{sudo puppet apply #{manifest} #{options} > /dev/null}
-    queue %{echo "----->   Succeed."}
   end
 end
