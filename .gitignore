@@ -4,5 +4,4 @@
 .sass-cache
 .vagrant
 .bundle
-.ssh-config
 node_modules

@@ -2,14 +2,8 @@ require_relative "environment"
 require_relative "extra"
 
 namespace :nginx do
-  desc ""
-  task :setup => :environment do
-    queue! %{sudo mkdir -p "#{nginx_log_path}"}
-    queue! %{sudo chown -R "#{nginx_user}" "#{nginx_log_path}"}
-  end
-
   %w(stop start restart reload status).each do |action|
-    desc "#{action.capitalize} nginx"
+    desc "#{action.capitalize} nginx."
     task action.to_sym do
       queue %{echo "-----> #{action.capitalize} nginx"}
       queue echo_cmd %{sudo service nginx "#{action}"}
@@ -23,7 +17,7 @@ namespace :nginx do
     desc ""
     task :upload => :environment do
       queue %{echo "-----> Put nginx.conf to #{nginx_config}"}
-      queue %{echo "#{parse("nginx.conf.erb")}" > "#{nginx_config}"}
+      queue %{echo "#{parse_template("nginx.conf.erb")}" > "#{nginx_config}"}
     end
 
     desc ""
@@ -35,7 +29,7 @@ namespace :nginx do
 
     desc ""
     task :print => :environment do
-      puts parse("nginx.conf.erb")
+      puts parse_template("nginx.conf.erb")
     end
   end
 end
