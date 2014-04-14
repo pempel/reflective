@@ -1,6 +1,5 @@
 {
   "name": "reflective",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
     "preinstall": "npm list grunt-cli -g || npm install grunt-cli -g"
@@ -8,6 +7,7 @@
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-compass": "^0.7.2",
-    "grunt-contrib-uglify": "^0.4.0"
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }
