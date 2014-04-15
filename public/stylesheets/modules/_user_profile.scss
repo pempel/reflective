@@ -1,0 +1,41 @@
+.user-profile {
+  float: left;
+  width: $user-profile-width;
+
+  .user-profile-photo {
+    float: left;
+    padding-right: 1em;
+  }
+
+  .user-profile-name {
+    color: #ffffff;
+    font-family: "AleksandraC";
+    font-size: 1.7em;
+  }
+
+  .user-profile-job {
+    font-family: "AleksandraC";
+    font-size: 1em;
+    padding-bottom: .8em;
+  }
+
+  .user-profile-lines {
+    margin-top: 1em;
+
+    .user-profile-line {
+      padding-top: .2em;
+
+      div:nth-child(1) {
+        float: left;
+        text-align: center;
+        color: #cb6898;
+        width: 1em;
+      }
+
+      div:nth-child(2) {
+        display: inline;
+        padding-left: .5em;
+      }
+    }
+  }
+}

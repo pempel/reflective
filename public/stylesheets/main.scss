@@ -1,6 +1,11 @@
 @import "compass/reset";
 
-.notice {
-  color: red;
-  margin: 2em;
-}
+@import "basics/fonts";
+@import "basics/images";
+
+@import "helpers/variables";
+
+@import "layouts/header";
+
+@import "modules/language_switcher";
+@import "modules/user_profile";

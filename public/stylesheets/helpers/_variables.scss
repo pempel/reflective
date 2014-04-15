@@ -1,0 +1,27 @@
+// Header layout.
+//
+// Colors.
+$header-color: #2f2f2f;
+$header-text-color: #b2b2b2;
+$header-link-color: $header-text-color;
+$header-link-hover-color: #ffffff;
+//
+// Dimensions.
+$header-padding-top-and-bottom: 2em;
+$header-padding-left-and-right: 3%;
+$header-height: 12em;
+$header-width: 100%;
+
+
+// Language switcher module.
+//
+// Dimensions.
+$language-switcher-width: 15%;
+
+
+// User profile module.
+//
+// Dimensions.
+$user-profile-width: ($header-width -
+                      $header-padding-left-and-right*2 -
+                      $language-switcher-width);

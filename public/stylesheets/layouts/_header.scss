@@ -1,0 +1,15 @@
+#header {
+  background-color: $header-color;
+  color: $header-text-color;
+  padding: $header-padding-top-and-bottom $header-padding-left-and-right;
+  height: $header-height;
+  width: $header-width;
+
+  a {
+    color: $header-link-color;
+
+    &:hover {
+      color: $header-link-hover-color;
+    }
+  }
+}
