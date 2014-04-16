@@ -8,35 +8,151 @@
   </head>
   <body>
     <div id="header">
-      <div class="language-switcher">
-        <a href="#en">English</a>
-        <a href="#ru">Русский</a>
-      </div>
-      <div class="user-profile">
-        <img class="user-profile-photo" src="images/me.jpg">
-        <div class="user-profile-name">Евгений Пемпель</div>
-        <div class="user-profile-job">веб-разработчик</div>
-        <div class="user-profile-lines">
-          <div class="user-profile-line">
-            <div><i class="fa fa-map-marker"></i></div>
-            <div>Россия, Москва</div>
-          </div>
-          <div class="user-profile-line">
-            <div><i class="fa fa-clock-o"></i></div>
-            <div>09:05</div>
-          </div>
-        </div>
-        <div class="user-profile-lines">
-          <div class="user-profile-line">
-            <div><i class="fa fa-envelope"></i></div>
-            <div><a href="mailto:eugene.pempel@gmail.com">eugene.pempel@gmail.com</a></div>
-          </div>
-          <div class="user-profile-line">
-            <div><i class="fa fa-skype"></i></div>
-            <div><a href="skype:re_jekkka?chat">re_jekkka</a></div>
-          </div>
+      <div id="header-left">
+        <div class="languages">
+          <a href="#">English</a>
+          <a href="#">Русский</a>
         </div>
       </div>
+      <div id="header-right">
+        <div class="profile">
+          <img class="profile-photo" src="images/me.jpg">
+          <div class="profile-name">Евгений Пемпель</div>
+          <div class="profile-job">веб-разработчик</div>
+          <div class="tags">
+            <div class="tag">
+              <div><i class="fa fa-map-marker"></i></div>
+              <div>Россия, Москва</div>
+            </div>
+            <div class="tag">
+              <div><i class="fa fa-clock-o"></i></div>
+              <div>09:05</div>
+            </div>
+          </div>
+          <div class="tags">
+            <div class="tag">
+              <div><i class="fa fa-envelope"></i></div>
+              <div><a href="mailto:eugene.pempel@gmail.com">eugene.pempel@gmail.com</a></div>
+            </div>
+            <div class="tag">
+              <div><i class="fa fa-skype"></i></div>
+              <div><a href="skype:re_jekkka?chat">re_jekkka</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <section>
+        <header>
+          <h1>Проекты</h1>
+          <hr>
+        </header>
+        <article>
+          <header>
+            <h1>Reflective</h1>
+          </header>
+          <div class="task">
+            <div>Задача:</div>
+            <div>наглядным образом представить свое портфолио.</div>
+          </div>
+          <div class="tags">
+            <div class="tag">
+              <div><i class="fa fa-home"></i></div>
+              <div><a href="#">pempel.me</a></div>
+            </div>
+            <div class="tag">
+              <div><i class="fa fa-github-alt"></i></div>
+              <div><a href="https://github.com/pempel/reflective">pempel/reflective</a></div>
+            </div>
+          </div>
+          <div class="technologies">
+            <div class="technology">
+              <div>Фреймворки:</div>
+              <div>compass</div>
+            </div>
+            <div class="technology">
+              <div>Языки:</div>
+              <div>html, css, scss, javascript</div>
+            </div>
+            <div class="technology">
+              <div>Библиотеки:</div>
+              <div>d3.js</div>
+            </div>
+            <div class="technology">
+              <div>Инструменты:</div>
+              <div>grunt.js, mina, puppet, vagrant, nginx, vim, git</div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <header>
+            <h1>Musk</h1>
+          </header>
+          <div class="task">
+            <div>Задача:</div>
+            <div>автоматизировать процесс извлeчения MP3-тегов с сайта <a href="http://www.discogs.com">discogs.com</a> и записи этих тегов в соответствующие MP3-файлы для их корректного отображения в любимом плеере.</div>
+          </div>
+          <div class="tags">
+            <div class="tag">
+              <div><i class="fa fa-github-alt"></i></div>
+              <div><a href="https://github.com/pempel/musk">pempel/musk</a></div>
+            </div>
+          </div>
+          <div class="technologies">
+            <div class="technology">
+              <div>Языки:</div>
+              <div>ruby</div>
+            </div>
+            <div class="technology">
+              <div>Библиотеки:</div>
+              <div>gli, taglib-ruby, rspec, factory_girl</div>
+            </div>
+            <div class="technology">
+              <div>Инструменты:</div>
+              <div>vim, git</div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <header>
+          <h1>Примеры кода</h1>
+          <hr>
+        </header>
+        <article>
+          <header>
+            <h1>Ruby</h1>
+          </header>
+          <div class="examples">
+            <div class="example">
+              <div>&mdash;</div>
+              <div><a href="https://gist.github.com/pempel/9a2a23a3f27134220294">MoneyValidator</a></div>
+              <div>rails, active_model</div>
+            </div>
+            <div class="example">
+              <div>&mdash;</div>
+              <div><a href="https://gist.github.com/pempel/44370abe07eaae78fe07">Devise::Strategies::XTokenAuthenticatable</a></div>
+              <div>rails, devise</div>
+            </div>
+            <div class="example">
+              <div>&mdash;</div>
+              <div><a href="https://gist.github.com/pempel/d77379ce4f399b278ab3">Order::Statable</a></div>
+              <div>rails, active_support</div>
+            </div>
+            <div class="example">
+              <div>&mdash;</div>
+              <div><a href="https://gist.github.com/pempel/f8f347b172a1bbdc9c23">FactoryGirl::Syntax::Methods</a></div>
+              <div>rails, factory_girl_rails</div>
+            </div>
+            <div class="example">
+              <div>&mdash;</div>
+              <div><a href="https://gist.github.com/pempel/c04ec63d137aa9cd9b6d">Unless</a></div>
+              <div>style</div>
+            </div>
+          </div>
+        </article>
+      </section>
     </div>
   </body>
 </html>

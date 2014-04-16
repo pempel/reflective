@@ -1,0 +1,11 @@
+.examples {
+  @include list;
+
+  .example {
+    @include list-item;
+
+    div:nth-child(3) {
+      padding: .2em 1.5em;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.tags {
+  @include list;
+
+  .tag {
+    @include list-item;
+
+    div:nth-child(1) {
+      text-align: center;
+      color: $tag-icon-color;
+      width: 1em;
+    }
+  }
+}

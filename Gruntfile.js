@@ -27,15 +27,17 @@ module.exports = function(grunt) {
           "public/javascripts/**/*.js",
           "!public/javascripts/**/*.min.js",
         ],
-        tasks: ["default"],
+        tasks: ["build"],
         options: {
           spawn: false,
         }
       }
     },
   });
+
   grunt.loadNpmTasks("grunt-contrib-compass");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.registerTask("default", ["compass", "uglify"]);
+
+  grunt.registerTask("build", ["compass", "uglify"]);
 };

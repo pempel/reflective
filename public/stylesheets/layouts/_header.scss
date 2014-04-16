@@ -1,7 +1,7 @@
 #header {
-  background-color: $header-color;
-  color: $header-text-color;
-  padding: $header-padding-top-and-bottom $header-padding-left-and-right;
+  color: $header-color;
+  background-color: $header-background-color;
+  padding: $header-padding-vertical $header-padding-horizontal;
   height: $header-height;
   width: $header-width;
 
@@ -11,5 +11,14 @@
     &:hover {
       color: $header-link-hover-color;
     }
+  }
+
+  #header-left {
+    float: left;
+    width: $header-left-width;
+  }
+
+  #header-right {
+    width: $header-right-width;
   }
 }

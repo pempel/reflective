@@ -1,11 +1,16 @@
 @import "compass/reset";
 
-@import "basics/fonts";
+@import "basics/variables";
+@import "basics/mixins";
 @import "basics/images";
-
-@import "helpers/variables";
+@import "basics/fonts";
 
 @import "layouts/header";
+@import "layouts/content";
 
-@import "modules/language_switcher";
-@import "modules/user_profile";
+@import "modules/languages";
+@import "modules/profile";
+@import "modules/task";
+@import "modules/tags";
+@import "modules/technologies";
+@import "modules/examples";
