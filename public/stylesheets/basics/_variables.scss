@@ -19,6 +19,13 @@ $content-padding-vertical: 4em;
 $content-padding-horizontal: $header-padding-horizontal + $header-left-width;
 
 
+// Layout: #footer.
+$footer-color: $header-color;
+$footer-background-color: $header-background-color;
+$footer-padding-vertical: 1.5em;
+$footer-padding-horizontal: $content-padding-horizontal;
+
+
 // Module: .profile.
 $profile-name-color: #ffffff;
 
