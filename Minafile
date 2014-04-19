@@ -1,0 +1,3 @@
+# vi: set ft=ruby
+
+require_relative "config/mina/environments/work"
