@@ -1,9 +1,24 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    copy: {
+      live: {
+        files: [{
+          expand: true,
+          cwd: "app/fonts/",
+          src: "*",
+          dest: "public/fonts/",
+        }, {
+          expand: true,
+          cwd: "app/images/",
+          src: "*",
+          dest: "public/images/",
+        }]
+      }
+    },
     compass: {
       live: {
         options: {
-          sassDir: "public/stylesheets",
+          sassDir: "app/stylesheets",
           cssDir: "public/stylesheets",
           imagesDir: "public/images",
           outputStyle: "compressed",
@@ -13,19 +28,16 @@ module.exports = function(grunt) {
     uglify: {
       live: {
         files: {
-          "public/javascripts/main.min.js": [
-            "public/javascripts/**/*.js",
-            "!public/javascripts/**/*.min.js",
-          ]
+          src: "app/javascripts/**/*.js",
+          dest: "public/javascripts/main.js",
         }
       }
     },
     watch: {
       scripts: {
         files: [
-          "public/stylesheets/**/*.scss",
-          "public/javascripts/**/*.js",
-          "!public/javascripts/**/*.min.js",
+          "app/stylesheets/**/*.scss",
+          "app/javascripts/**/*.js",
         ],
         tasks: ["build"],
         options: {
@@ -35,9 +47,10 @@ module.exports = function(grunt) {
     },
   });
 
+  grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-compass");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
-  grunt.registerTask("build", ["compass", "uglify"]);
+  grunt.registerTask("build", ["copy", "compass", "uglify"]);
 };
