@@ -6,12 +6,12 @@ Vagrant.configure("2") do |config|
   config.vm.define "reflective-work" do |work|
     work.vm.box = "hashicorp/precise64"
     work.vm.hostname = "reflective-work"
-    work.vm.network "private_network", ip: "33.33.13.31"
+    work.vm.network "private_network", ip: "192.168.56.101"
     work.vm.network "forwarded_port", guest: 80, host: 8081, auto_correct: true
     work.vm.synced_folder ".", "/var/apps/reflective", nfs: true
     work.vm.provider "virtualbox" do |virtualbox|
       virtualbox.customize ["modifyvm", :id, "--name", "reflective-work"]
-      virtualbox.customize ["modifyvm", :id, "--memory", "256"]
+      virtualbox.customize ["modifyvm", :id, "--memory", "1024"]
     end
     work.vm.provision "shell" do |shell|
       shell.path = "config/shell/work.sh"
@@ -23,11 +23,11 @@ Vagrant.configure("2") do |config|
   config.vm.define "reflective-test" do |test|
     test.vm.box = "hashicorp/precise64"
     test.vm.hostname = "reflective-test"
-    test.vm.network "private_network", ip: "33.33.13.32"
+    test.vm.network "private_network", ip: "192.168.56.102"
     test.vm.network "forwarded_port", guest: 80, host: 8082, auto_correct: true
     test.vm.provider "virtualbox" do |virtualbox|
       virtualbox.customize ["modifyvm", :id, "--name", "reflective-test"]
-      virtualbox.customize ["modifyvm", :id, "--memory", "256"]
+      virtualbox.customize ["modifyvm", :id, "--memory", "1024"]
     end
   end
 end
