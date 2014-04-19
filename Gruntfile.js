@@ -2,17 +2,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     copy: {
       live: {
-        files: [{
-          expand: true,
-          cwd: "app/fonts/",
-          src: "*",
-          dest: "public/fonts/",
-        }, {
-          expand: true,
-          cwd: "app/images/",
-          src: "*",
-          dest: "public/images/",
-        }],
+        files: [
+          {expand: true, cwd: "app/fonts/",  src: "*", dest: "public/fonts/"},
+          {expand: true, cwd: "app/images/", src: "*", dest: "public/images/"},
+        ],
       },
     },
     jade: {
@@ -22,7 +15,7 @@ module.exports = function(grunt) {
         },
       },
       files: {
-        src: "app/templates/**/*.jade",
+        src: "app/templates/index.jade",
         dest: "public/index.html",
       },
     },
@@ -45,13 +38,23 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      scripts: {
-        files: [
-          "app/stylesheets/**/*.scss",
-          "app/javascripts/**/*.js",
-          "app/templates/**/*.jade",
-        ],
-        tasks: ["build"],
+      jade: {
+        files: ["app/templates/**/*.jade"],
+        tasks: ["jade"],
+        options: {
+          spawn: false,
+        },
+      },
+      scss: {
+        files: ["app/stylesheets/**/*.scss"],
+        tasks: ["compass"],
+        options: {
+          spawn: false,
+        },
+      },
+      js: {
+        files: ["app/javascripts/**/*.js"],
+        tasks: ["uglify"],
         options: {
           spawn: false,
         },
