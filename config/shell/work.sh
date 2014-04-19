@@ -29,7 +29,7 @@ then
   puts "Installing nginx..."
   sudo apt-get update > /dev/null 2>&1
   sudo apt-get install -y -qq nginx > /dev/null 2>&1
-  update-rc.d nginx defaults > /dev/null 2>&1
+  sudo update-rc.d nginx defaults > /dev/null 2>&1
 fi
 
 ###############################################################################

@@ -4,6 +4,5 @@
 .sass-cache
 .vagrant
 .bundle
-log
 public
 node_modules

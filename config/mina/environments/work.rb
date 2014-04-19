@@ -5,11 +5,10 @@ namespace :work do
   task :initialize do
     set :app,                        "reflective"
     set :app_path,                   "/var/apps/#{app}"
-    set :log_path,                   "#{app_path}/log"
     set :nginx_user,                 "www-data"
     set :nginx_path,                 "/etc/nginx"
     set :nginx_root_path,            "#{app_path}/public"
-    set :nginx_logs_path,            "#{log_path}/nginx"
+    set :nginx_logs_path,            "/var/log/nginx/#{app}"
     set :nginx_sites_available_path, "#{nginx_path}/sites-available"
     set :nginx_sites_enabled_path,   "#{nginx_path}/sites-enabled"
     set :nginx_server_name,          ".#{app}.work"
@@ -19,7 +18,6 @@ namespace :work do
   task :deploy do
     puts "-----> Deploying the application..."
     invoke "work:grunt:build"
-    invoke "work:grunt:watch"
     invoke "work:nginx:configure"
     invoke "work:nginx:config:update"
     invoke "work:nginx:restart"
@@ -31,14 +29,6 @@ namespace :work do
       puts "-----> Building the application..."
       system %{cd #{app_path}}
       system %{grunt build > /dev/null 2>&1}
-    end
-
-    desc "Watch the file system for changes."
-    task :watch => :initialize do
-      puts "-----> Watching the file system for changes..."
-      system %{cd #{app_path}}
-      system %{pkill grunt}
-      system %{grunt watch > /dev/null 2>&1 &}
     end
   end
 
