@@ -1,47 +1,78 @@
 require_relative "../utils"
 
 namespace :work do
-  task :setup do
-    set :app,      "reflective"
-    set :app_path, "/var/apps/#{app}"
-
+  desc "Initialize the environment."
+  task :initialize do
+    set :app,                        "reflective"
+    set :app_path,                   "/var/apps/#{app}"
+    set :log_path,                   "#{app_path}/log"
     set :nginx_user,                 "www-data"
     set :nginx_path,                 "/etc/nginx"
-    set :nginx_log_path,             "#{app_path}/log"
     set :nginx_root_path,            "#{app_path}/public"
+    set :nginx_logs_path,            "#{log_path}/nginx"
     set :nginx_sites_available_path, "#{nginx_path}/sites-available"
     set :nginx_sites_enabled_path,   "#{nginx_path}/sites-enabled"
-    set :nginx_server_name,          ".#{app}.dev"
+    set :nginx_server_name,          ".#{app}.work"
   end
 
-  task :build do
-    `mkdir -p #{app_path}/log`
-    `grunt build`
-    `grunt watch > /dev/null 2>&1 &`
+  desc "Deploy the application."
+  task :deploy do
+    puts "-----> Deploying the application..."
+    invoke "work:grunt:build"
+    invoke "work:grunt:watch"
+    invoke "work:nginx:configure"
+    invoke "work:nginx:config:update"
+    invoke "work:nginx:restart"
   end
 
-  task :deploy => ["build", "nginx:config:update", "nginx:restart"]
+  namespace :grunt do
+    desc "Build the application."
+    task :build => :initialize do
+      puts "-----> Building the application..."
+      system %{cd #{app_path}}
+      system %{grunt build > /dev/null 2>&1}
+    end
+
+    desc "Watch the file system for changes."
+    task :watch => :initialize do
+      puts "-----> Watching the file system for changes..."
+      system %{cd #{app_path}}
+      system %{pkill grunt}
+      system %{grunt watch > /dev/null 2>&1 &}
+    end
+  end
 
   namespace :nginx do
+    desc "Configure nginx."
+    task :configure do
+      puts "-----> Configuring nginx..."
+      system %{sudo mkdir -p #{nginx_logs_path}}
+    end
+
+    desc "Restart nginx."
     task :restart do
-      `echo "-----> Restarting nginx..."`
-      `sudo service nginx restart > /dev/null 2>&1`
+      puts "-----> Restarting nginx..."
+      system %{sudo service nginx restart > /dev/null 2>&1}
     end
 
     namespace :config do
+      desc "Update the nginx configuration file."
       task :update => [:move, :link]
 
-      task :move => :setup do
-        `echo "-----> Moving nginx.conf to #{nginx_sites_available_path}/#{app}..."`
-        `echo "#{parse_template("nginx.conf.erb")}" > "#{nginx_sites_available_path}/#{app}"`
+      desc "Move the nginx configuration file to the sites-available directory"
+      task :move => :initialize do
+        puts "-----> Moving nginx.conf to #{nginx_sites_available_path}/#{app}..."
+        system %{sudo sh -c "echo '#{parse_template("nginx.conf.erb")}' > #{nginx_sites_available_path}/#{app}"}
       end
 
-      task :link => :setup do
-        `echo "-----> Creating symbolic links to #{nginx_sites_available_path}/#{app}..."`
-        `sudo ln -fs "#{nginx_sites_available_path}/#{app}" "#{nginx_sites_enabled_path}/#{app}"`
+      desc "Link to the nginx configuration file."
+      task :link => :initialize do
+        puts "-----> Creating a symbolic link to #{nginx_sites_available_path}/#{app}..."
+        system %{sudo ln -fs #{nginx_sites_available_path}/#{app} #{nginx_sites_enabled_path}/#{app}}
       end
 
-      task :print => :setup do
+      desc "Print the nginx configuration file to STDOUT."
+      task :print => :initialize do
         puts parse_template("nginx.conf.erb")
       end
     end

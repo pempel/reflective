@@ -123,5 +123,5 @@ if [[ ! -d "$APP_PATH/public" ]]
 then
   cd $APP_PATH
   puts "Deploying the application..."
-  mina work:deploy
+  mina work:deploy > /dev/null 2>&1
 fi
