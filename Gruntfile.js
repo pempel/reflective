@@ -3,9 +3,9 @@ module.exports = function(grunt) {
     copy: {
       live: {
         files: [
-          {expand: true, cwd: "app/documents",  src: "*", dest: "public/documents"},
-          {expand: true, cwd: "app/fonts",      src: "*", dest: "public/fonts"},
-          {expand: true, cwd: "app/images",     src: "*", dest: "public/images"},
+          {expand: true, cwd: "app/documents", src: "*", dest: "public/documents"},
+          {expand: true, cwd: "app/fonts",     src: "*", dest: "public/fonts"},
+          {expand: true, cwd: "app/images",    src: "*", dest: "public/images"},
         ],
       },
     },
@@ -33,8 +33,7 @@ module.exports = function(grunt) {
     uglify: {
       live: {
         files: {
-          src:  "app/javascripts/**/*.js",
-          dest: "public/javascripts/main.js",
+          "public/javascripts/main.js": ["app/javascripts/**/*.js"],
         },
       },
     },
