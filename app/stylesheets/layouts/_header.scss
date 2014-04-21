@@ -7,6 +7,8 @@
 
   a {
     color: $header-link-color;
+    border-bottom: dotted 1px;
+    text-decoration: none;
 
     &:hover {
       color: $header-link-hover-color;
