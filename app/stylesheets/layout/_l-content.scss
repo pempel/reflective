@@ -1,0 +1,16 @@
+.l-content {
+  margin: 0 auto;
+  padding: 2em 2em;
+  overflow: hidden;
+  width: 85%;
+
+  .l-content-left {
+    float: left;
+    width: 70%;
+  }
+
+  .l-content-right {
+    float: right;
+    width: 15%;
+  }
+}

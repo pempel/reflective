@@ -1,24 +1,28 @@
-#header
-  #header-left
-    .languages
-      a(href="#") English
-      a(href="#") Русский
-  #header-right
-    .profile
-      img.profile-photo(src="me.jpg")
-      .profile-name Евгений Пемпель
-      .profile-job веб-разработчик
-      .tags
-        .tag
-          div: i.fa.fa-map-marker
-          div Россия, Москва
-        .tag
-          div: i.fa.fa-clock-o
-          div#time: br
-      .tags
-        .tag
-          div: i.fa.fa-envelope
-          div: a(href="mailto:eugene.pempel@gmail.com") eugene.pempel@gmail.com
-        .tag
-          div: i.fa.fa-skype
-          div: a(href="skype:re_jekkka?chat") re_jekkka
+header
+  .l-content
+    .l-content-left
+      .profile
+        img(src="me.jpg")
+        header
+          h1 Евгений Пемпель
+          h2 веб-разработчик
+        section
+          .tags
+            .tag
+              div: i.fa.fa-map-marker
+              div Россия, Москва
+            .tag
+              div: i.fa.fa-clock-o
+              div#time: br
+        section
+          .tags
+            .tag
+              div: i.fa.fa-envelope
+              div: a(href="mailto:eugene.pempel@gmail.com") eugene.pempel@gmail.com
+            .tag
+              div: i.fa.fa-skype
+              div: a(href="skype:re_jekkka?chat") re_jekkka
+    .l-content-right
+      .languages
+        a(href="#") English
+        a(href="#") Русский

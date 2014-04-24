@@ -1,18 +1,21 @@
 .profile {
-  .profile-photo {
+  height: 12em;
+
+  img {
     float: left;
-    padding-right: 1em;
+    padding-right: 2em;
   }
 
-  .profile-name {
-    color: $profile-name-color;
+  header {
     font-family: "AleksandraC";
-    font-size: 1.7em;
+
+    h1 {
+      color: $header-title-color;
+      font-size: 1.7em;
+    }
   }
 
-  .profile-job {
-    font-family: "AleksandraC";
-    font-size: 1em;
-    padding-bottom: .8em;
+  section {
+    margin: 1em 0;
   }
 }
