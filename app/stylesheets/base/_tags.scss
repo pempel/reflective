@@ -11,6 +11,14 @@ img {
 }
 
 body {
+  &.en :lang(ru) {
+    display: none;
+  }
+
+  &.ru :lang(en) {
+    display: none;
+  }
+
   > header {
     color: $header-color;
     background-color: $header-background-color;

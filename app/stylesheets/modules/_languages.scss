@@ -1,5 +1,11 @@
 .languages {
   a {
+    cursor: pointer;
     margin-right: 1em;
+
+    &.active {
+      color: $header-active-link-color;
+      border-bottom-style: none;
+    }
   }
 }

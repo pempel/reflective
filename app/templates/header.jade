@@ -3,12 +3,18 @@ header
     .l-content-left
       .profile
         img(src="me.jpg")
-        header
+        header(lang="en")
+          h1 Eugene Pempel
+          h2 full-stack web developer
+        header(lang="ru")
           h1 Евгений Пемпель
           h2 веб-разработчик
         section
           .tags
-            .tag
+            .tag(lang="en")
+              div: i.fa.fa-map-marker
+              div Russia, Moscow
+            .tag(lang="ru")
               div: i.fa.fa-map-marker
               div Россия, Москва
             .tag
@@ -24,5 +30,5 @@ header
               div: a(href="skype:re_jekkka?chat") re_jekkka
     .l-content-right
       .languages
-        a(href="#") English
-        a(href="#") Русский
+        a#en.active English
+        a#ru Русский
