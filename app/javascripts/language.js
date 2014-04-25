@@ -8,6 +8,11 @@ function setLanguage(language) {
   }
   $.cookie("language", /ru/.test(language) ? "ru" : "en");
   $("body").attr("class", $.cookie("language"));
+  var titles = {
+    "en": "Eugene Pempel",
+    "ru": "Евгений Пемпель",
+  }
+  $(document).attr("title", titles[$.cookie("language")]);
   $("#" + $.cookie("language")).parent().children().removeClass("active");
   $("#" + $.cookie("language")).addClass("active");
 }
