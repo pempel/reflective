@@ -1,0 +1,47 @@
+.chart {
+  margin-top: 1em;
+  overflow: hidden;
+
+  .chart-name {
+    float: left;
+    margin-right: .7em;
+  }
+
+  .chart-link {
+    float: left;
+    margin-right: .7em;
+
+    @include pseudo-link($main-link-color);
+    &:hover { @include pseudo-link($main-color); }
+    &.active { @include active-link($main-color, #e0e0e0); }
+  }
+
+  .chart-area {
+    margin: 2em 0 1em 0;
+
+    svg {
+      .bar {
+        fill: rgb(129, 129, 129);
+      }
+
+      .label {
+        fill: rgb(224, 224, 224);
+      }
+
+      .months {
+        font-family: "AleksandraC";
+        font-size: 12px;
+        text-anchor: end;
+        dominant-baseline: middle;
+        fill: rgb(255, 255, 255);
+      }
+
+      .company {
+        font-family: "AleksandraC";
+        font-size: 14px;
+        text-anchor: start;
+        dominant-baseline: middle;
+      }
+    }
+  }
+}

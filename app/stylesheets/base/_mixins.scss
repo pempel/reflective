@@ -1,9 +1,31 @@
-@mixin list {
-  margin: .7em 0;
+@mixin normal-link($color) {
+  color: $color;
+  cursor: pointer;
+  border-bottom: solid 1px;
+  text-decoration: none;
 }
 
-@mixin list-item {
-  padding: .2em 0;
+@mixin pseudo-link($color) {
+  color: $color;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+
+@mixin active-link($color, $bg-color) {
+  color: $color;
+  background-color: $bg-color;
+  cursor: default;
+  border-bottom-style: none;
+  text-decoration: none;
+}
+
+@mixin list($margin-vertical: .7em, $margin-horizontal: 0) {
+  margin: $margin-vertical $margin-horizontal;
+}
+
+@mixin list-item($padding-vertical: .2em, $padding-horizontal: 0) {
+  padding: $padding-vertical $padding-horizontal;
 
   div:nth-child(1) {
     float: left;

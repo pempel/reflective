@@ -1,0 +1,8 @@
+mixin header(subject)
+  header(id="#{subject.id}")
+    each title, locale in subject.title.localized
+      h1(lang="#{locale}")
+        span: i.fa.fa-angle-right
+        span!= title
+    if attributes.hr
+      hr

@@ -1,0 +1,37 @@
+{
+  "specifications": {
+    "author": {
+      "name": {
+        "localized": {
+          "en": "Eugene Pempel",
+          "ru": "Евгений Пемпель"
+        }
+      },
+      "profession": {
+        "localized": {
+          "en": "full-stack web developer",
+          "ru": "веб-разработчик"
+        }
+      },
+      "location": {
+        "localized": {
+          "en": "Russia, Moscow",
+          "ru": "Россия, Москва"
+        }
+      },
+      "contacts": {
+        "email": {
+          "name": "eugene.pempel@gmail.com",
+          "href": "mailto:eugene.pempel@gmail.com"
+        },
+        "skype": {
+          "name": "re_jekkka",
+          "href": "skype:re_jekkka?chat"
+        }
+      }
+    },
+    "launch": {
+      "year": 2014
+    }
+  }
+}

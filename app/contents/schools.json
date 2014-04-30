@@ -1,0 +1,38 @@
+{
+  "schools": [{
+    "id": "miet",
+    "title": {
+      "localized": {
+        "en": "National Research University of Electronic Technology",
+        "ru": "Московский институт электронной техники (НИУ МИЭТ)"
+      }
+    },
+    "link": {
+      "name": "miet.ru",
+      "href": "http://miet.ru"
+    },
+    "duration": {
+      "localized": {
+        "en": "from September 2005 to June 2010 &mdash; 5 years",
+        "ru": "с сентября 2005 по июнь 2010 &mdash; 5 лет"
+      }
+    },
+    "graduation": {
+      "localized": {
+        "en": "majored in Applied Mathematics",
+        "ru": "инженер по специальности &laquo;прикладная математика&raquo;"
+      }
+    },
+    "hits": [{
+      "localized": {
+        "en": "received a diploma with distinction",
+        "ru": "закончил с отличительным дипломом красного цвета"
+      }
+    }, {
+      "localized": {
+        "en": "defended the diploma project on the theme: &laquo;Nonlocal Josephson electrodynamics&raquo;",
+        "ru": "защитил дипломный проект на тему: &laquo;<a href=\"research.pdf\">расчет джозефсоновского контакта с нелокальной электродинамикой</a>&raquo;"
+      }
+    }]
+  }]
+}

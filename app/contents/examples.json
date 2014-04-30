@@ -1,0 +1,28 @@
+{
+  "examples": [{
+    "id": "examples-in-ruby",
+    "title": {
+      "localized": {
+        "en": "Ruby",
+        "ru": "Ruby"
+      }
+    },
+    "links": [{
+      "name": "Order::Statable",
+      "href": "https://gist.github.com/pempel/d77379ce4f399b278ab3",
+      "tags": ["rails", "active_support"]
+    }, {
+      "name": "FactoryGirl::Syntax::Methods",
+      "href": "https://gist.github.com/pempel/f8f347b172a1bbdc9c23",
+      "tags": ["rails", "factory_girl_rails"]
+    }, {
+      "name": "Devise::Strategies::XTokenAuthenticatable",
+      "href": "https://gist.github.com/pempel/44370abe07eaae78fe07",
+      "tags": ["rails", "devise"]
+    }, {
+      "name": "MoneyValidator",
+      "href": "https://gist.github.com/pempel/9a2a23a3f27134220294",
+      "tags": ["rails", "active_model"]
+    }]
+  }]
+}

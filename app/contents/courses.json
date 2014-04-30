@@ -1,0 +1,51 @@
+{
+  "courses": [{
+    "id": "bkc-2013",
+    "title": {
+      "localized": {
+        "en": "BKC&ndash;IH Moscow",
+        "ru": "BKC&ndash;IH Moscow"
+      }
+    },
+    "link": {
+      "name": "bkc.ru",
+      "href": "http://bkc.ru"
+    },
+    "duration": {
+      "localized": {
+        "en": "from September to November 2013 &mdash; 3 months",
+        "ru": "с сентября по ноябрь 2013 &mdash; 3 месяца"
+      }
+    },
+    "hits": [{
+      "localized": {
+        "en": "completed an intensive pre-intermediate English course",
+        "ru": "закончил интенсивный курс английского языка ступени &laquo;pre-intermediate&raquo;"
+      }
+    }]
+  }, {
+    "id": "bkc-2009",
+    "title": {
+      "localized": {
+        "en": "BKC&ndash;IH Moscow",
+        "ru": "BKC&ndash;IH Moscow"
+      }
+    },
+    "link": {
+      "name": "bkc.ru",
+      "href": "http://bkc.ru"
+    },
+    "duration": {
+      "localized": {
+        "en": "from September 2009 to January 2010 &mdash; 5 months",
+        "ru": "с сентября 2009 по январь 2010 &mdash; 5 месяцев"
+      }
+    },
+    "hits": [{
+      "localized": {
+        "en": "completed a general pre-intermediate English course",
+        "ru": "закончил курс английского языка ступени &laquo;pre-intermediate&raquo;"
+      }
+    }]
+  }]
+}

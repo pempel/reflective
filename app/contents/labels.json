@@ -1,0 +1,54 @@
+{
+  "label": {
+    "task": {
+      "localized": {
+        "en": "Task",
+        "ru": "Задача"
+      }
+    },
+    "databases": {
+      "localized": {
+        "en": "Databases",
+        "ru": "Базы данных"
+      }
+    },
+    "frameworks": {
+      "localized": {
+        "en": "Frameworks",
+        "ru": "Фреймворки"
+      }
+    },
+    "languages": {
+      "localized": {
+        "en": "Languages",
+        "ru": "Языки"
+      }
+    },
+    "metalanguages": {
+      "localized": {
+        "en": "Metalanguages",
+        "ru": "Метаязыки"
+      }
+    },
+    "libraries": {
+      "localized": {
+        "en": "Libraries",
+        "ru": "Библиотеки"
+      }
+    },
+    "tools": {
+      "localized": {
+        "en": "Tools",
+        "ru": "Инструменты"
+      }
+    },
+    "technologies": [
+      "databases",
+      "frameworks",
+      "languages",
+      "metalanguages",
+      "libraries",
+      "tools"
+    ]
+  }
+}

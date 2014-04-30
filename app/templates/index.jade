@@ -1,15 +1,36 @@
+include mixins/all
 doctype html
 html
   head
     meta(charset="utf-8")
-    title Eugene Pempel
-    link(rel="shortcut icon" href="favicon.png")
-    link(rel="stylesheet", href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
-    link(rel="stylesheet", href="main.css")
+    title!= specifications.author.name.localized.en
+    link(rel="icon",       type="image/png", href="favicon.png")
+    link(rel="stylesheet", type="text/css",  href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
+    link(rel="stylesheet", type="text/css",  href="main.css")
   body.en
-    include header
-    include section
-    include footer
-    script(src="https://cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js")
-    script(src="https://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js")
+    header
+      .l-content
+        .l-content-left
+          +details
+        .l-content-right
+          +locale-links
+    main
+      .l-content
+        .l-content-left
+          +projects
+          +examples
+          +jobs
+          +schools
+          +courses
+        .l-content-right
+          aside
+            nav
+              +account-links
+              +section-links
+    footer
+      .l-content
+        +rights
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js")
     script(src="main.js")

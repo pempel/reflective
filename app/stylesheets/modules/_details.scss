@@ -1,4 +1,4 @@
-.profile {
+.details {
   height: 12em;
 
   img {
@@ -8,11 +8,11 @@
 
   header {
     font-family: "AleksandraC";
-    padding-top: .4em;
 
     h1 {
       color: $header-title-color;
       font-size: 1.7em;
+      padding: .1em 0;
     }
   }
 

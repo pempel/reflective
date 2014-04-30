@@ -1,9 +1,0 @@
-.task {
-  @include list;
-  @include list-item;
-
-  div:nth-child(1) {
-    font-style: italic;
-    font-weight: bold;
-  }
-}

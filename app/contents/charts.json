@@ -1,0 +1,29 @@
+{
+  "charts": {
+    "jobs": {
+      "name": {
+        "localized": {
+          "en": "49 months",
+          "ru": "49 месяцев"
+        }
+      },
+      "types": [{
+        "id": "chart-by-companies",
+        "name": {
+          "localized": {
+            "en": "by companies",
+            "ru": "по компаниям"
+          }
+        }
+      }, {
+        "id": "chart-by-positions",
+        "name": {
+          "localized": {
+            "en": "by positions",
+            "ru": "по должностям"
+          }
+        }
+      }]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+mixin details
+  section.details
+    img(src="me.jpg")
+    header
+      each name, locale in specifications.author.name.localized
+        h1(lang="#{locale}")!= name
+      each profession, locale in specifications.author.profession.localized
+        h2(lang="#{locale}")!= profession
+    section
+      +tags
+        +tag(specifications.author, "location", "fa fa-map-marker")
+        .tag
+          div: i.fa.fa-clock-o
+          div#time: br
+    section
+      +tags
+        +tag-link(specifications.author.contacts, "email", "fa fa-envelope")
+        +tag-link(specifications.author.contacts, "skype", "fa fa-skype")
+
+mixin projects
+  section
+    +header(sections.projects)(hr=true)
+    each project in projects
+      article
+        +header(project)
+        +task(project)
+        +tags
+          +tag-link(project.links, "home", "fa fa-home")
+          +tag-link(project.links, "github", "fa fa-github-alt")
+        +technologies(project)
+
+mixin examples
+  section
+    +header(sections.examples)(hr=true)
+    each example in examples
+      article
+        +header(example)
+        .examples
+          each link in example.links
+            .example
+              div &mdash;
+              div: a(href="#{link.href}")!= link.name
+              div!= link.tags.join(", ")
+
+mixin jobs
+  section
+    +header(sections.jobs)(hr=true)
+    +charts("jobs")
+    each job in jobs
+      article
+        +header(job)
+        +tags
+          +tag-link(job)
+          +tag(job, "duration", "fa fa-clock-o")
+          +tag(job, "position", "fa fa-smile-o")
+          +tag(job, "location", job.location.remote ? "fa fa-bullhorn" : "fa fa-coffee")
+        +technologies(job)
+        +hits(job)
+
+mixin schools
+  section
+    +header(sections.schools)(hr=true)
+    each school in schools
+      article
+        +header(school)
+        +tags
+          +tag-link(school)
+          +tag(school, "duration", "fa fa-clock-o")
+          +tag(school, "graduation", "fa fa-smile-o")
+        +hits(school)
+
+mixin courses
+  section
+    +header(sections.courses)(hr=true)
+    each course in courses
+      article
+        +header(course)
+        +tags
+          +tag-link(course)
+          +tag(course, "duration", "fa fa-clock-o")
+        +hits(course)
+
+mixin rights
+  section
+    span &copy;
+    span &nbsp;
+    span#timeline!= specifications.launch.year
+    span &nbsp;
+    each name, locale in specifications.author.name.localized
+      span(lang="#{locale}")!= name

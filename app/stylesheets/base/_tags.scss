@@ -1,106 +1,86 @@
-@font-face {
-  font-family: "AleksandraC";
-  src: url("aleksandra.otf") format("opentype");
-  font-style: normal;
-  font-weight: normal;
-}
-
 img {
   max-height: 100%;
   max-width: 100%;
 }
 
 body {
-  &.en :lang(ru) {
-    display: none;
-  }
-
-  &.ru :lang(en) {
-    display: none;
-  }
+  &.en :lang(ru) { display: none; }
+  &.ru :lang(en) { display: none; }
 
   > header {
     color: $header-color;
-    background-color: $header-background-color;
+    background-color: $header-bg-color;
     width: 100%;
 
     a {
-      color: $header-link-color;
-      border-bottom: dotted 1px;
-      text-decoration: none;
-
-      &:hover {
-        color: $header-link-hover-color;
-      }
+      @include pseudo-link($header-link-color);
+      &:hover { @include pseudo-link($header-link-hover-color); }
+      &.active { @include active-link($header-active-link-color, $header-bg-color); }
     }
   }
 
-  > section {
-    margin: 2em 0;
+  > main {
+    color: $main-color;
+    background-color: $main-bg-color;
 
     a {
-      color: $section-link-color;
-      border-bottom: solid 1px;
-      text-decoration: none;
+      @include normal-link($main-link-color);
+      &:hover { @include normal-link($main-link-hover-color); }
+    }
 
-      &:hover {
-        color: $section-link-hover-color;
+    section {
+      margin-top: 2em;
+
+      > header {
+        h1 {
+          color: $main-section-header-color;
+          font-family: "AleksandraC";
+          font-weight: normal;
+          font-size: 1.7em;
+
+          > span:first-child {
+            margin-left: -.6em;
+            margin-right: .2em;
+            visibility: hidden;
+          }
+        }
+
+        hr {
+          border: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          height: 0;
+        }
       }
+
+      article {
+        margin: 1em 0 2em 0;
+
+        > header {
+          h1 {
+            color: $main-color;
+            font-family: "AleksandraC";
+            font-weight: bold;
+            font-size: 1.5em;
+
+            > span:first-child {
+              margin-left: -.6em;
+              margin-right: .2em;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+
+    aside {
+      position: relative;
     }
   }
 
   > footer {
     color: $footer-color;
-    background-color: $footer-background-color;
+    background-color: $footer-bg-color;
     text-align: center;
   }
-}
-
-main {
-  section {
-    > header {
-      color: $main-section-header-color;
-      padding-bottom: .5em;
-
-      h1 {
-        font-family: "AleksandraC";
-        font-size: 1.7em;
-        margin-left: -.6em;
-
-        > span:first-child {
-          margin-right: .2em;
-          visibility: hidden;
-        }
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        height: 0;
-      }
-    }
-
-    article {
-      padding-bottom: 2em;
-
-      > header {
-        h1 {
-          font-family: "AleksandraC";
-          font-size: 1.5em;
-          font-weight: bold;
-          margin-left: -.6em;
-
-          > span:first-child {
-            margin-right: .2em;
-            visibility: hidden;
-          }
-        }
-      }
-    }
-  }
-}
-
-aside {
-  position: relative;
 }

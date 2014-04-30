@@ -1,0 +1,49 @@
+mixin tags
+  .tags
+    block
+
+mixin tag(subject, key, icon)
+  if (key in subject)
+    each value, locale in subject[key].localized
+      .tag(lang="#{locale}")
+        div: i(class="#{icon}")
+        div!= value
+
+mixin tag-link(subject, key, icon)
+  - var key = key || "link"
+  - var icon = icon || "fa fa-link"
+  if (key in subject)
+    .tag
+      div: i(class="#{icon}")
+      div: a(href="#{subject[key].href}")!= subject[key].name
+
+mixin task(subject)
+  if ("task" in subject)
+    each task, locale in subject.task.localized
+      .task(lang="#{locale}")
+        div!= label.task.localized[locale] + ":"
+        div!= task + "."
+
+mixin hits(subject)
+  if ("hits" in subject)
+    .hits
+      each hit in subject.hits
+        each text, locale in hit.localized
+          .hit(lang="#{locale}")
+            div: i.fa.fa-star
+            div!= text
+        if ("hits" in hit)
+          each subhit in hit.hits
+            each text, locale in subhit.localized
+              .sub.hit(lang="#{locale}")
+                div &mdash;
+                div!= text
+
+mixin technologies(subject)
+  .technologies
+    each technologies in label.technologies
+      if subject[technologies]
+        each technology, locale in label[technologies].localized
+          .technology(lang="#{locale}")
+            div!= technology + ":"
+            div!= subject[technologies].sort().join(", ")

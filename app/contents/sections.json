@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "projects": {
+      "id": "projects",
+      "title": {
+        "localized": {
+          "en": "Projects",
+          "ru": "Проекты"
+        }
+      }
+    },
+    "examples": {
+      "id": "examples",
+      "title": {
+        "localized": {
+          "en": "Code Examples",
+          "ru": "Примеры кода"
+        }
+      }
+    },
+    "jobs": {
+      "id": "jobs",
+      "title": {
+        "localized": {
+          "en": "Jobs",
+          "ru": "Работа"
+        }
+      }
+    },
+    "schools": {
+      "id": "schools",
+      "title": {
+        "localized": {
+          "en": "Higher Education",
+          "ru": "Высшее образование"
+        }
+      }
+    },
+    "courses": {
+      "id": "courses",
+      "title": {
+        "localized": {
+          "en": "Language Courses",
+          "ru": "Языковые курсы"
+        }
+      }
+    }
+  }
+}

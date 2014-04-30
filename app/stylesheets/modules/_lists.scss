@@ -1,0 +1,65 @@
+.task {
+  @include list;
+  @include list-item;
+
+  div:nth-child(1) {
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+
+.tags {
+  @include list;
+
+  .tag {
+    @include list-item;
+    div:nth-child(1) {
+      text-align: center;
+      color: $icon-color;
+      width: 1em;
+    }
+  }
+}
+
+.hits {
+  @include list;
+
+  .hit {
+    @include list-item;
+    div:nth-child(1) {
+      text-align: center;
+      color: $icon-color;
+      width: 1em;
+    }
+    div:nth-child(2) {
+      display: table-cell;
+    }
+  }
+
+  .sub {
+    padding-left: 1.5em;
+  }
+}
+
+.technologies {
+  @include list;
+
+  .technology {
+    @include list-item;
+    div:nth-child(1) {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+}
+
+.examples {
+  @include list;
+
+  .example {
+    @include list-item;
+    div:nth-child(3) {
+      padding: .3em 1.5em;
+    }
+  }
+}

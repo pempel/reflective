@@ -1,0 +1,55 @@
+{
+  "projects": [{
+    "id": "reflective",
+    "title": {
+      "localized": {
+        "en": "Reflective",
+        "ru": "Reflective"
+      }
+    },
+    "task": {
+      "localized": {
+        "en": "to present my portfolio in a visual way",
+        "ru": "наглядным образом представить свое портфолио"
+      }
+    },
+    "links": {
+      "home": {
+        "name": "pempel.in/work",
+        "href": "http://pempel.in/work"
+      },
+      "github": {
+        "name": "pempel/reflective",
+        "href": "https://github.com/pempel/reflective"
+      }
+    },
+    "languages": ["html", "css", "javascript", "bash"],
+    "metalanguages": ["jade", "sass"],
+    "frameworks": ["compass"],
+    "libraries": ["d3.js", "jquery", "jquery-cookie"],
+    "tools": ["grunt", "mina", "vagrant", "nginx", "vim", "git"]
+  }, {
+    "id": "musk",
+    "title": {
+      "localized": {
+        "en": "Musk",
+        "ru": "Musk"
+      }
+    },
+    "task": {
+      "localized": {
+        "en": "to automate the extraction of music metadata from <a href=\"http://www.discogs.com\">discogs.com</a> and adding it to your MP3 files so that they appear properly in your favorite player",
+        "ru": "автоматизировать извлeчение музыкальной метаинформации с сайта <a href=\"http://www.discogs.com\">discogs.com</a> и запись этой метаинформации в MP3-файлы для их корректного отображения в любимом плеере"
+      }
+    },
+    "links": {
+      "github": {
+        "name": "pempel/musk",
+        "href": "https://github.com/pempel/musk"
+      }
+    },
+    "languages": ["ruby"],
+    "libraries": ["gli", "taglib-ruby", "rspec", "factory_girl"],
+    "tools": ["vim", "git"]
+  }]
+}

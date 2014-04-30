@@ -1,0 +1,32 @@
+mixin locale-links
+  #locale-links
+    each locale in locales
+      span: a(href="#{locale.code}")!= locale.name
+
+mixin account-links
+  .account-links
+    .account-link
+      div: i.fa.fa-github-square
+      div: a(href="#{accounts.github.href}")!= accounts.github.name
+    .account-link
+      div: i.fa.fa-linkedin-square
+      div: a(href="#{accounts.linkedin.href}")!= accounts.linkedin.name
+
+mixin subsection-links(subjects)
+  each subject in subjects
+    each title, locale in subject.title.localized
+      .section-link.sub(lang="#{locale}")
+        div: i.fa.fa-angle-right
+        div: a(href="##{subject.id}")!= title
+
+mixin section-links
+  .section-links
+    each section in sections
+      each title, locale in section.title.localized
+        .section-link(lang="#{locale}")
+          div: i.fa.fa-angle-right
+          div: a(href="##{section.id}")!= title
+      case section.id
+        when sections.projects.id: +subsection-links(projects)
+        when sections.examples.id: +subsection-links(examples)
+        when sections.jobs.id:     +subsection-links(jobs)

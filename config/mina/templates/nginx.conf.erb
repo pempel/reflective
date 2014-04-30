@@ -10,6 +10,10 @@ server {
     index index.html;
   }
 
+  location ~ \.(json)$ {
+    root <%= nginx_root_path %>;
+  }
+
   location ~ \.(pdf)$ {
     root <%= nginx_root_path %>/documents;
   }

@@ -1,0 +1,452 @@
+{
+  "jobs": [{
+    "id": "leader-telecom",
+    "title": {
+      "localized": {
+        "en": "Leader Telecom",
+        "ru": "Leader Telecom"
+      }
+    },
+    "duration": {
+      "numerical": 1,
+      "localized": {
+        "en": "March 2014 &mdash; 1 month",
+        "ru": "Март 2014 &mdash; 1 месяц"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "Ruby on Rails Developer",
+        "ru": "разработчик Ruby on Rails"
+      }
+    },
+    "location": {
+      "remote": true,
+      "localized": {
+        "en": "remotely",
+        "ru": "yдалённо"
+      }
+    },
+    "link": {
+      "name": "leadertelecom.biz",
+      "href": "http://leadertelecom.biz"
+    },
+    "databases": ["mysql"],
+    "frameworks": ["rails"],
+    "languages": ["ruby"],
+    "libraries": [
+      "active_modal_serializers",
+      "apipie-rails",
+      "her",
+      "virtus",
+      "rspec-rails",
+      "factory_girl_rails"
+    ],
+    "tools": ["git", "vim"],
+    "hits": [{
+      "localized": {
+        "en": "developed the REST JSON API for partners with the full code coverage and auto-generating docs",
+        "ru": "реализовал REST JSON API для личного кабинета партнера с полным покрытием тестами и документацией, которая генерировалась непосредственно из кода и тестов"
+      }
+    }]
+  }, {
+    "id": "intellect-design",
+    "title": {
+      "localized": {
+        "en": "Intellect Design",
+        "ru": "Intellect Design"
+      }
+    },
+    "duration": {
+      "numerical": 4,
+      "localized": {
+        "en": "from October 2013 to January 2014 &mdash; 4 months",
+        "ru": "c октября 2013 по январь 2014 &mdash; 4 месяца"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "Ruby on Rails Developer",
+        "ru": "разработчик Ruby on Rails"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "intellectdesign.ru",
+      "href": "http://www.intellectdesign.ru"
+    },
+    "databases": ["mysql"],
+    "frameworks": ["rails"],
+    "languages": ["ruby"],
+    "metalanguages": ["slim"],
+    "libraries": [
+      "activeadmin",
+      "state_machine",
+      "active_model_serializers",
+      "apipie-rails",
+      "activerecord-nulldb-adapter",
+      "rspec-rails",
+      "factory_girl_rails",
+      "virtus"
+    ],
+    "tools": ["git", "vim", "redmine"],
+    "hits": [{
+      "localized": {
+        "en": "developed a state engine for customer orders (see <a href=\"https://gist.github.com/pempel/d77379ce4f399b278ab3\">Order::Statable</a>)",
+        "ru": "реализовал бизнес-логику клиентских заказов (см. пример <a href=\"https://gist.github.com/pempel/d77379ce4f399b278ab3\">Order::Statable</a>)"
+      }
+    }, {
+      "localized": {
+        "en": "developed the REST JSON API for some resources with the full code coverage and auto-generating docs",
+        "ru": "реализовал REST JSON API для нескольких справочников с полным покрытием тестами и документацией, которая генерировалась непосредственно из кода и тестов"
+      }
+    }, {
+      "localized": {
+        "en": "speeded up RSpec tests 7x by ensuring that unit tests were not hitting the database",
+        "ru": "многократно ускорил выполнение тестов, отрефакторив их таким образом, чтобы обращение к базе данных производилось только при необходимости"
+      }
+    }]
+  }, {
+    "id": "crowd-systems",
+    "title": {
+      "localized": {
+        "en": "Crowd Systems",
+        "ru": "Crowd Systems"
+      }
+    },
+    "duration": {
+      "numerical": 4,
+      "localized": {
+        "en": "from May to August 2013 &mdash; 4 months",
+        "ru": "c мая по август 2013 &mdash; 4 месяца"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "Ruby on Rails Developer",
+        "ru": "разработчик Ruby on Rails"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "crowdsystems.ru",
+      "href": "http://www.crowdsystems.ru"
+    },
+    "databases": ["mysql", "redis"],
+    "frameworks": ["rails"],
+    "languages": ["ruby"],
+    "metalanguages": ["haml"],
+    "libraries": [
+      "activeadmin",
+      "devise",
+      "resque",
+      "active_model_serializers",
+      "inherited_resources",
+      "roo",
+      "rspec-rails",
+      "factory_girl_rails",
+      "state_machine"
+    ],
+    "tools": ["capistrano", "bluepill", "unicorn", "vim", "git", "redmine"],
+    "hits": [{
+      "localized": {
+        "en": "participated in the development of the REST JSON API for mobile applications",
+        "ru": "участвовал в реализации REST JSON API для мобильных приложений"
+      }
+    }, {
+      "localized": {
+        "en": "implemented user authentication through Twitter, Facebook, VK",
+        "ru": "реализовал аутентификацию через Twitter, Facebook, VK"
+      }
+    }, {
+      "localized": {
+        "en": "implemented import and export table data",
+        "ru": "реализовал импорт и экспорт табличных данных"
+      }
+    }, {
+      "localized": {
+        "en": "integrated Google Analytics",
+        "ru": "интегрировал Google Analytics"
+      }
+    }]
+  }, {
+    "id": "business-car-2",
+    "title": {
+      "localized": {
+        "en": "Business Car",
+        "ru": "Business Car"
+      }
+    },
+    "duration": {
+      "numerical": 17,
+      "localized": {
+        "en": "from December 2011 to April 2013 &mdash; 1 year 5 months",
+        "ru": "c декабря 2011 по апрель 2013 &mdash; 1 год 5 месяцев"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "Ruby on Rails Developer",
+        "ru": "разработчик Ruby on Rails"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "business-car.ru",
+      "href": "http://www.business-car.ru"
+    },
+    "databases": ["postgresql"],
+    "frameworks": ["rails"],
+    "languages": ["ruby"],
+    "metalanguages": ["haml", "coffeescript"],
+    "libraries": [
+      "backbone.js",
+      "underscore.js",
+      "rabl",
+      "inherited_resources",
+      "enumerate_it",
+      "carrierwave",
+      "factory_girl_rails",
+      "rspec-rails",
+      "bootstrap",
+      "roo"
+    ],
+    "tools": ["vim", "git", "pivotal tracker", "jira"],
+    "hits": [{
+      "localized": {
+        "en": "collected and analyzed business requirements",
+        "ru": "собирал и анализировал бизнес-требования"
+      }
+    }, {
+      "localized": {
+        "en": "conducted interviews with Ruby on Rails developers",
+        "ru": "собеседовал разработчиков Ruby on Rails"
+      }
+    }, {
+      "localized": {
+        "en": "participated in the development of the web application for Toyota and Lexus service centers",
+        "ru": "непосредственно работал над архитектурой веб-приложения по автоматизации работы дилерских центров Toyota и Lexus"
+      }
+    }, {
+      "localized": {
+        "en": "participated in the development of complex business processes:",
+        "ru": "принимал ведущее участие в реализации сложных бизнес-процессов:"
+      },
+      "hits": [{
+        "localized": {
+          "en": "the creation of supplier invoices",
+          "ru": "ручное создание инвойсов поставщиков"
+        }
+      }, {
+        "localized": {
+          "en": "the workflow engine for repair orders",
+          "ru": "приходование товара на склад (формирование приходных накладных)"
+        }
+      }, {
+        "localized": {
+          "en": "the price setting for spare parts",
+          "ru": "отпуск товара со склада (формирование расходных накладных)"
+        }
+      }, {
+        "localized": {
+          "en": "the reservation of spare parts",
+          "ru": "резервирование товара"
+        }
+      }, {
+        "localized": {
+          "en": "the payment of bills",
+          "ru": "оплата клиентских счетов"
+        }
+      }]
+    }]
+  }, {
+    "id": "yandex",
+    "title": {
+      "localized": {
+        "en": "Yandex",
+        "ru": "Yandex"
+      }
+    },
+    "duration": {
+      "numerical": 5,
+      "localized": {
+        "en": "from July to November 2011 &mdash; 5 months",
+        "ru": "c июля по ноябрь 2011 &mdash; 5 месяцев"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "Django Developer",
+        "ru": "разработчик Django"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "yandex.ru",
+      "href": "http://yandex.ru"
+    },
+    "databases": ["mysql"],
+    "frameworks": ["django"],
+    "languages": ["python"],
+    "tools": ["git", "vim", "jira"],
+    "hits": [{
+      "localized": {
+        "en": "developed the intranet web application for placing and processing smartphone orders",
+        "ru": "реализовал и запустил внутреннее веб-приложение для размещения и обработки заказов корпоративных смартфонов"
+      }
+    }, {
+      "localized": {
+        "en": "participated in the development of the intranet web application for handling resumes and hiring new employees",
+        "ru": "участвовал в реализации внутреннего веб-приложения для обработки поступающих резюме и найма новых сотрудников"
+      }
+    }]
+  }, {
+    "id": "business-car-1",
+    "title": {
+      "localized": {
+        "en": "Business Car",
+        "ru": "Business Car"
+      }
+    },
+    "duration": {
+      "numerical": 9,
+      "localized": {
+        "en": "from October 2010 to June 2011 &mdash; 9 months",
+        "ru": "c октября 2010 по июнь 2011 &mdash; 9 месяцев"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "Django Developer",
+        "ru": "разработчик Django"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "business-car.ru",
+      "href": "http://business-car.ru"
+    },
+    "databases": ["postgresql"],
+    "frameworks": ["django"],
+    "languages": ["python"],
+    "tools": ["hg", "vim", "textmate", "redmine"],
+    "hits": [{
+      "localized": {
+        "en": "participated in the development of the intranet web application for automation of business processes of Toyota and Lexus service centers",
+        "ru": "участвовал в реализации веб-приложения по автоматизации различных бизнес-процессов дилерских центров Toyota и Lexus"
+      }
+    }]
+  }, {
+    "id": "cqg",
+    "title": {
+      "localized": {
+        "en": "CQG",
+        "ru": "CQG"
+      }
+    },
+    "duration": {
+      "numerical": 4,
+      "localized": {
+        "en": "from August to November 2009 &mdash; 4 months",
+        "ru": "c августа по ноябрь 2009 &mdash; 4 месяца"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "C++ Developer",
+        "ru": "программист C++"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "cqg.com",
+      "href": "http://cqg.com"
+    },
+    "languages": ["cpp"],
+    "libraries": ["boost", "stl", "mfc"],
+    "tools": ["visual studio 2005"],
+    "hits": [{
+      "localized": {
+        "en": "participated in the development of the Windows application for viewing and analyzing log files from CQG Integrated Client",
+        "ru": "участвовал в реализации настольного приложения под Windows для просмотра и анализа логов одного из основных продуктов компании&nbsp;&mdash;&nbsp;CQG Integrated Client"
+      }
+    }]
+  }, {
+    "id": "informicus",
+    "title": {
+      "localized": {
+        "en": "Informicus",
+        "ru": "Informicus"
+      }
+    },
+    "duration": {
+      "numerical": 5,
+      "localized": {
+        "en": "from October 2007 to February 2008",
+        "ru": "c октября 2007 по февраль 2008&nbsp;&mdash;&nbsp;5 месяцев"
+      }
+    },
+    "position": {
+      "localized": {
+        "en": "C# Developer",
+        "ru": "программист C#"
+      }
+    },
+    "location": {
+      "remote": false,
+      "localized": {
+        "en": "in an office",
+        "ru": "в офисе"
+      }
+    },
+    "link": {
+      "name": "informicus.ru",
+      "href": "http://informicus.ru"
+    },
+    "languages": ["c-sharp"],
+    "frameworks": ["asp.net"],
+    "tools": ["visual studio 2003"],
+    "hits": [{
+      "localized": {
+        "en": "participated in the development of the web application for one of American radiology centers",
+        "ru": "участвовал в реализации веб-приложения для одной из американских клиник радиологии"
+      }
+    }]
+  }]
+}

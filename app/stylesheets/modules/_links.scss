@@ -1,0 +1,36 @@
+#locale-links {
+  span { margin-right: 1em; }
+}
+
+.account-links {
+  @include list;
+
+  .account-link {
+    @include list-item;
+    font-family: "AleksandraC";
+    font-size: 1.4em;
+  }
+}
+
+.section-links {
+  @include list(2em);
+
+  .section-link {
+    @include list-item(.3em);
+    div:nth-child(1) { color: $main-bg-color; }
+    div:nth-child(2) { a { @include pseudo-link($main-link-color); } }
+
+    &:hover {
+      cursor: pointer;
+      div:nth-child(1) { color: $main-color; }
+      div:nth-child(2) { a { @include pseudo-link($main-color); } }
+    }
+  }
+
+  .section-link.active {
+    div:nth-child(1) { color: $main-color; }
+    div:nth-child(2) { a { @include active-link($main-color, $main-bg-color); } }
+  }
+
+  .sub { padding-left: 1em; }
+}

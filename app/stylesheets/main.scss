@@ -2,15 +2,12 @@
 
 @import "base/variables";
 @import "base/mixins";
+@import "base/fonts";
 @import "base/tags";
 
-@import "layout/l-content";
+@import "layout/content";
 
-@import "modules/profile";
-@import "modules/languages";
-@import "modules/task";
-@import "modules/tags";
-@import "modules/technologies";
-@import "modules/examples";
-@import "modules/account-links";
-@import "modules/section-links";
+@import "modules/charts";
+@import "modules/details";
+@import "modules/links";
+@import "modules/lists";
