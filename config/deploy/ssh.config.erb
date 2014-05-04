@@ -1,4 +1,5 @@
-Host <%= ssh_host %>
+Host <%= domain %>
   StrictHostKeyChecking no
-  HostName <%= ssh_host_name %>
-  User <%= ssh_host_user %>
+  IdentityFile ~/.ssh/<%= domain %>_rsa
+  HostName <%= address %>
+  User <%= user %>

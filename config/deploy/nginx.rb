@@ -6,8 +6,8 @@ namespace :nginx do
       if [ -d #{nginx_logs_path} ]; then
         echo "----->   Already set up.";
       else
-        #{echo_cmd %{sudo mkdir -p "#{nginx_logs_path}"}} &&
-        #{echo_cmd %{sudo chown -R "#{nginx_user}" "#{nginx_logs_path}"}} &&
+        #{echo_cmd %{sudo mkdir -p #{nginx_logs_path}}} &&
+        #{echo_cmd %{sudo chown -R #{nginx_user} #{nginx_logs_path}}} &&
         echo "----->   Succeed."
       fi
     }
