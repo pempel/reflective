@@ -1,0 +1,494 @@
+/* line 17, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../.bundle/ruby/2.1.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "AleksandraC";
+  src: url("aleksandra.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 1, ../../app/stylesheets/base/_tags.scss */
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* line 7, ../../app/stylesheets/base/_tags.scss */
+body.en :lang(ru) {
+  display: none;
+}
+/* line 8, ../../app/stylesheets/base/_tags.scss */
+body.ru :lang(en) {
+  display: none;
+}
+/* line 10, ../../app/stylesheets/base/_tags.scss */
+body > header {
+  color: #b2b2b2;
+  background-color: #2f2f2f;
+  width: 100%;
+}
+/* line 15, ../../app/stylesheets/base/_tags.scss */
+body > header a {
+  color: #b2b2b2;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+/* line 17, ../../app/stylesheets/base/_tags.scss */
+body > header a:hover {
+  color: white;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+/* line 18, ../../app/stylesheets/base/_tags.scss */
+body > header a.active {
+  color: white;
+  background-color: #2f2f2f;
+  cursor: default;
+  border-bottom-style: none;
+  text-decoration: none;
+}
+/* line 22, ../../app/stylesheets/base/_tags.scss */
+body > main {
+  color: black;
+  background-color: white;
+}
+/* line 26, ../../app/stylesheets/base/_tags.scss */
+body > main a {
+  color: #858586;
+  cursor: pointer;
+  border-bottom: solid 1px;
+  text-decoration: none;
+}
+/* line 28, ../../app/stylesheets/base/_tags.scss */
+body > main a:hover {
+  color: #2f2f2f;
+  cursor: pointer;
+  border-bottom: solid 1px;
+  text-decoration: none;
+}
+/* line 31, ../../app/stylesheets/base/_tags.scss */
+body > main section {
+  margin-top: 2em;
+}
+/* line 35, ../../app/stylesheets/base/_tags.scss */
+body > main section > header h1 {
+  color: #cccccc;
+  font-family: "AleksandraC";
+  font-weight: normal;
+  font-size: 1.7em;
+}
+/* line 41, ../../app/stylesheets/base/_tags.scss */
+body > main section > header h1 > span:first-child {
+  margin-left: -.6em;
+  margin-right: .2em;
+  visibility: hidden;
+}
+/* line 48, ../../app/stylesheets/base/_tags.scss */
+body > main section > header hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  height: 0;
+}
+/* line 56, ../../app/stylesheets/base/_tags.scss */
+body > main section article {
+  margin: 1em 0 2em 0;
+}
+/* line 60, ../../app/stylesheets/base/_tags.scss */
+body > main section article > header h1 {
+  color: black;
+  font-family: "AleksandraC";
+  font-weight: bold;
+  font-size: 1.5em;
+}
+/* line 66, ../../app/stylesheets/base/_tags.scss */
+body > main section article > header h1 > span:first-child {
+  margin-left: -.6em;
+  margin-right: .2em;
+  visibility: hidden;
+}
+/* line 76, ../../app/stylesheets/base/_tags.scss */
+body > main aside {
+  position: relative;
+}
+/* line 81, ../../app/stylesheets/base/_tags.scss */
+body > footer {
+  color: #b2b2b2;
+  background-color: #2f2f2f;
+  text-align: center;
+}
+
+/* line 1, ../../app/stylesheets/layout/_content.scss */
+.l-content {
+  margin: 0 auto;
+  padding: 2em 2em;
+  overflow: hidden;
+  width: 85%;
+}
+/* line 7, ../../app/stylesheets/layout/_content.scss */
+.l-content .l-content-left {
+  float: left;
+  width: 70%;
+}
+/* line 12, ../../app/stylesheets/layout/_content.scss */
+.l-content .l-content-right {
+  float: right;
+  width: 15%;
+}
+
+/* line 1, ../../app/stylesheets/modules/_charts.scss */
+.chart {
+  margin-top: 1em;
+  overflow: hidden;
+}
+/* line 5, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-name {
+  float: left;
+  margin-right: .7em;
+}
+/* line 10, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-link {
+  float: left;
+  margin-right: .7em;
+  color: #858586;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+/* line 15, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-link:hover {
+  color: black;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+/* line 16, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-link.active {
+  color: black;
+  background-color: #e0e0e0;
+  cursor: default;
+  border-bottom-style: none;
+  text-decoration: none;
+}
+/* line 19, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-area {
+  margin: 2em 0 1em 0;
+}
+/* line 23, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-area svg .bar {
+  fill: #818181;
+}
+/* line 27, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-area svg .label {
+  fill: #e0e0e0;
+}
+/* line 31, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-area svg .months {
+  font-family: "AleksandraC";
+  font-size: 12px;
+  text-anchor: end;
+  dominant-baseline: middle;
+  fill: white;
+}
+/* line 39, ../../app/stylesheets/modules/_charts.scss */
+.chart .chart-area svg .company {
+  font-family: "AleksandraC";
+  font-size: 14px;
+  text-anchor: start;
+  dominant-baseline: middle;
+}
+
+/* line 1, ../../app/stylesheets/modules/_details.scss */
+.details {
+  height: 12em;
+}
+/* line 4, ../../app/stylesheets/modules/_details.scss */
+.details img {
+  float: left;
+  padding-right: 2em;
+}
+/* line 9, ../../app/stylesheets/modules/_details.scss */
+.details header {
+  font-family: "AleksandraC";
+}
+/* line 12, ../../app/stylesheets/modules/_details.scss */
+.details header h1 {
+  color: white;
+  font-size: 1.7em;
+  padding: .1em 0;
+}
+/* line 19, ../../app/stylesheets/modules/_details.scss */
+.details section {
+  margin: 1em 0;
+}
+
+/* line 2, ../../app/stylesheets/modules/_links.scss */
+#locale-links span {
+  margin-right: 1em;
+}
+
+/* line 5, ../../app/stylesheets/modules/_links.scss */
+.account-links {
+  margin: 0.7em 0;
+}
+/* line 8, ../../app/stylesheets/modules/_links.scss */
+.account-links .account-link {
+  padding: 0.2em 0;
+  font-family: "AleksandraC";
+  font-size: 1.4em;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.account-links .account-link div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.account-links .account-link div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+
+/* line 15, ../../app/stylesheets/modules/_links.scss */
+.section-links {
+  margin: 2em 0;
+}
+/* line 18, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link {
+  padding: 0.3em 0;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.section-links .section-link div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.section-links .section-link div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+/* line 20, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link div:nth-child(1) {
+  color: white;
+}
+/* line 21, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link div:nth-child(2) a {
+  color: #858586;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+/* line 23, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link:hover {
+  cursor: pointer;
+}
+/* line 25, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link:hover div:nth-child(1) {
+  color: black;
+}
+/* line 26, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link:hover div:nth-child(2) a {
+  color: black;
+  cursor: pointer;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+}
+/* line 31, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link.active div:nth-child(1) {
+  color: black;
+}
+/* line 32, ../../app/stylesheets/modules/_links.scss */
+.section-links .section-link.active div:nth-child(2) a {
+  color: black;
+  background-color: white;
+  cursor: default;
+  border-bottom-style: none;
+  text-decoration: none;
+}
+/* line 35, ../../app/stylesheets/modules/_links.scss */
+.section-links .sub {
+  padding-left: 1em;
+}
+
+/* line 1, ../../app/stylesheets/modules/_lists.scss */
+.task {
+  margin: 0.7em 0;
+  padding: 0.2em 0;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.task div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.task div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+/* line 5, ../../app/stylesheets/modules/_lists.scss */
+.task div:nth-child(1) {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 11, ../../app/stylesheets/modules/_lists.scss */
+.tags {
+  margin: 0.7em 0;
+}
+/* line 14, ../../app/stylesheets/modules/_lists.scss */
+.tags .tag {
+  padding: 0.2em 0;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.tags .tag div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.tags .tag div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+/* line 16, ../../app/stylesheets/modules/_lists.scss */
+.tags .tag div:nth-child(1) {
+  text-align: center;
+  color: #cb6898;
+  width: 1em;
+}
+
+/* line 24, ../../app/stylesheets/modules/_lists.scss */
+.hits {
+  margin: 0.7em 0;
+}
+/* line 27, ../../app/stylesheets/modules/_lists.scss */
+.hits .hit {
+  padding: 0.2em 0;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.hits .hit div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.hits .hit div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+/* line 29, ../../app/stylesheets/modules/_lists.scss */
+.hits .hit div:nth-child(1) {
+  text-align: center;
+  color: #cb6898;
+  width: 1em;
+}
+/* line 34, ../../app/stylesheets/modules/_lists.scss */
+.hits .hit div:nth-child(2) {
+  display: table-cell;
+}
+/* line 39, ../../app/stylesheets/modules/_lists.scss */
+.hits .sub {
+  padding-left: 1.5em;
+}
+
+/* line 44, ../../app/stylesheets/modules/_lists.scss */
+.technologies {
+  margin: 0.7em 0;
+}
+/* line 47, ../../app/stylesheets/modules/_lists.scss */
+.technologies .technology {
+  padding: 0.2em 0;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.technologies .technology div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.technologies .technology div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+/* line 49, ../../app/stylesheets/modules/_lists.scss */
+.technologies .technology div:nth-child(1) {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 56, ../../app/stylesheets/modules/_lists.scss */
+.examples {
+  margin: 0.7em 0;
+}
+/* line 59, ../../app/stylesheets/modules/_lists.scss */
+.examples .example {
+  padding: 0.2em 0;
+}
+/* line 30, ../../app/stylesheets/base/_mixins.scss */
+.examples .example div:nth-child(1) {
+  float: left;
+}
+/* line 34, ../../app/stylesheets/base/_mixins.scss */
+.examples .example div:nth-child(2) {
+  display: inline;
+  padding-left: .5em;
+}
+/* line 61, ../../app/stylesheets/modules/_lists.scss */
+.examples .example div:nth-child(3) {
+  padding: .3em 1.5em;
+}
