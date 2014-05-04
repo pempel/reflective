@@ -5,13 +5,13 @@ server {
   error_log  <%= nginx_logs_path %>/error.log info;
   access_log <%= nginx_logs_path %>/access.log;
 
-  location / {
-    root <%= nginx_root_path %>;
-    index index.html;
+  location = / {
+    return 302 http://<%= nginx_server_name %>/work;
   }
 
-  location ~ \.(json)$ {
+  location /work {
     root <%= nginx_root_path %>;
+    index index.html;
   }
 
   location ~ \.(pdf)$ {

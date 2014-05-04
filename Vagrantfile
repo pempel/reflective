@@ -3,19 +3,19 @@
 Vagrant.configure("2") do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-  config.vm.define "reflective-work" do |work|
-    work.vm.box = "hashicorp/precise64"
-    work.vm.hostname = "reflective-work"
-    work.vm.network "private_network", ip: "192.168.56.101"
-    work.vm.network "forwarded_port", guest: 80, host: 8081, auto_correct: true
-    work.vm.synced_folder ".", "/var/apps/reflective", nfs: true
-    work.vm.provider "virtualbox" do |virtualbox|
-      virtualbox.customize ["modifyvm", :id, "--name", "reflective-work"]
-      virtualbox.customize ["modifyvm", :id, "--memory", "1024"]
+  config.vm.define "reflective-dev" do |dev|
+    dev.vm.box = "hashicorp/precise64"
+    dev.vm.hostname = "reflective-dev"
+    dev.vm.network "private_network", ip: "192.168.56.101"
+    dev.vm.network "forwarded_port", guest: 80, host: 8081, auto_correct: true
+    dev.vm.synced_folder ".", "/var/apps/reflective", nfs: true
+    dev.vm.provider "virtualbox" do |virtualbox|
+      virtualbox.customize ["modifyvm", :id, "--name", "reflective-dev"]
+      virtualbox.customize ["modifyvm", :id, "--memory", "512"]
     end
-    work.vm.provision "shell" do |shell|
-      shell.path = "config/shell/work.sh"
-      shell.args = ["/var/apps/reflective", ENV["TIME_ZONE"] || "Europe/Moscow"]
+    dev.vm.provision "shell" do |shell|
+      shell.path = "config/supply/dev.sh"
+      shell.args = ["/var/apps/reflective", `cat .ruby-version`.strip]
       shell.privileged = false
     end
   end
@@ -27,7 +27,12 @@ Vagrant.configure("2") do |config|
     test.vm.network "forwarded_port", guest: 80, host: 8082, auto_correct: true
     test.vm.provider "virtualbox" do |virtualbox|
       virtualbox.customize ["modifyvm", :id, "--name", "reflective-test"]
-      virtualbox.customize ["modifyvm", :id, "--memory", "1024"]
+      virtualbox.customize ["modifyvm", :id, "--memory", "512"]
+    end
+    test.vm.provision "shell" do |shell|
+      shell.path = "config/supply/test.sh"
+      shell.args = ["/var/apps/reflective", `cat .ruby-version`.strip]
+      shell.privileged = false
     end
   end
 end

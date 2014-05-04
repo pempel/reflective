@@ -1,22 +1,32 @@
 #!/bin/bash
 
 APP_PATH=$1
-TIME_ZONE=$2
-RUBY_VERSION=`cat $APP_PATH/.ruby-version`
+RUBY_VERSION=$2
 
 function puts()
 {
-  echo "==> `hostname`: $1"
+  echo "==> `hostname`: $1..."
+}
+
+function install()
+{
+  which $1 > /dev/null 2>&1
+  if [[ $? -ne 0 ]]
+  then
+    puts "Installing $1"
+    sudo apt-get update > /dev/null 2>&1
+    sudo apt-get install -y -qq $1 > /dev/null 2>&1
+  fi
 }
 
 #################################################################################
-## Setting up the specified time zone
+## Setting up the Europe/Moscow time zone
 #################################################################################
-cat /etc/timezone | grep $TIME_ZONE > /dev/null 2>&1
+cat /etc/timezone | grep 'Europe/Moscow' > /dev/null 2>&1
 if [[ $? -ne 0 ]]
 then
-  puts "Setting up the $TIME_ZONE time zone..."
-  sudo sh -c "echo '$TIME_ZONE' > /etc/timezone"
+  puts "Setting up the Europe/Moscow time zone"
+  sudo sh -c "echo 'Europe/Moscow' > /etc/timezone"
   sudo dpkg-reconfigure -f noninteractive tzdata > /dev/null 2>&1
 fi
 
@@ -26,31 +36,47 @@ fi
 which nginx > /dev/null 2>&1
 if [[ $? -ne 0 ]]
 then
-  puts "Installing nginx..."
+  puts "Installing nginx"
   sudo apt-get update > /dev/null 2>&1
-  sudo apt-get install -y -qq nginx > /dev/null 2>&1
+  sudo apt-get install -y -qq nginx libssl-dev apache2-utils > /dev/null 2>&1
   sudo update-rc.d nginx defaults > /dev/null 2>&1
 fi
 
 ###############################################################################
-## Installing git, make, g++, curl, libssl-dev, apache2-utils
+## Installing libssl-dev
 ###############################################################################
-which git > /dev/null 2>&1
-if [[ $? -ne 0 ]]
+if [[ ! $(dpkg -l | grep libssl-dev | awk '{ print $1 }') == "ii" ]]
 then
-  puts "Installing git, make, g++, curl, libssl-dev, apache2-utils..."
+  puts "Installing libssl-dev"
   sudo apt-get update > /dev/null 2>&1
-  sudo apt-get install -y -qq git make g++ curl > /dev/null 2>&1
-  sudo apt-get install -y -qq libssl-dev apache2-utils > /dev/null 2>&1
+  sudo apt-get install -y -qq libssl-dev > /dev/null 2>&1
 fi
 
+###############################################################################
+## Installing apache2-utils
+###############################################################################
+if [[ ! $(dpkg -l | grep apache2-utils | awk '{ print $1 }') == "ii" ]]
+then
+  puts "Installing apache2-utils"
+  sudo apt-get update > /dev/null 2>&1
+  sudo apt-get install -y -qq apache2-utils > /dev/null 2>&1
+fi
+
+###############################################################################
+## Installing git, make, curl, g++, sshpass
+###############################################################################
+install "git"
+install "make"
+install "curl"
+install "g++"
+install "sshpass"
 
 ###############################################################################
 ## Installing node.js and npm without sudo
 ###############################################################################
 if [[ ! -d "$HOME/opt" ]]
 then
-  puts "Installing node.js and npm without sudo..."
+  puts "Installing node.js and npm without sudo"
   git clone https://github.com/joyent/node.git ~/.node > /dev/null 2>&1
   cd ~/.node
   mkdir ~/opt
@@ -66,7 +92,7 @@ export PATH="$HOME/opt/bin:$PATH"
 ###############################################################################
 if [[ ! -d "$HOME/.rbenv" ]]
 then
-  puts "Installing rbenv, rbenv-binstubs, ruby-build..."
+  puts "Installing rbenv, rbenv-binstubs, ruby-build"
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv > /dev/null 2>&1
   mkdir -p ~/.rbenv/plugins
   cd ~/.rbenv/plugins
@@ -86,7 +112,7 @@ cd $HOME
 rbenv versions | grep $RUBY_VERSION > /dev/null
 if [[ $? -ne 0 ]]
 then
-  puts "Installing ruby $RUBY_VERSION..."
+  puts "Installing ruby $RUBY_VERSION"
   rbenv install $RUBY_VERSION > /dev/null 2>&1
 fi
 
@@ -95,14 +121,15 @@ fi
 ###############################################################################
 if [[ ! -d "$APP_PATH/.bundle" ]]
 then
+  sudo mkdir -p $APP_PATH/.bundle
   cd $APP_PATH
   gem list | grep bundler > /dev/null 2>&1
   if [[ $? -ne 0 ]]
   then
-    puts "Installing bundler..."
+    puts "Installing bundler"
     gem install bundler > /dev/null 2>&1
   fi
-  puts "Installing ruby gems..."
+  puts "Installing ruby gems"
   bundle install --path .bundle --binstubs .bundle/bin > /dev/null 2>&1
 fi
 
@@ -112,16 +139,6 @@ fi
 if [[ ! -d "$APP_PATH/node_modules" ]]
 then
   cd $APP_PATH
-  puts "Installing npm packages..."
+  puts "Installing npm packages"
   npm install > /dev/null 2>&1
-fi
-
-###############################################################################
-## Deploying the applicaiton
-###############################################################################
-if [[ ! -d "$APP_PATH/public" ]]
-then
-  cd $APP_PATH
-  puts "Deploying the application..."
-  mina work:deploy > /dev/null 2>&1
 fi
