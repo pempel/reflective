@@ -29,9 +29,6 @@ namespace :ssh do
         system %{
           cat ~/.ssh/config 2>/dev/null | grep #{domain} > /dev/null;
           if [ $? -ne 0 ]; then
-            if [ ! -f ~/.ssh/authorized_keys ]; then
-              touch ~/.ssh/authorized_keys;
-            fi
             cat #{ssh_key}.pub | #{sshpass_cmd} "cat >> ~/.ssh/authorized_keys";
             sudo sh -c "echo '#{ssh_config}' >> ~/.ssh/config";
           else
