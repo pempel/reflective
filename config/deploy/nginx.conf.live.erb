@@ -1,0 +1,33 @@
+server {
+  listen 80;
+  server_name <%= nginx_server_name %>;
+  rewrite ^/$ http://<%= nginx_server_name %>/work last;
+
+  error_log  <%= nginx_logs_path %>/error.log info;
+  access_log <%= nginx_logs_path %>/access.log;
+
+  location /work {
+    alias <%= nginx_root_path %>;
+    index index.html;
+  }
+
+  location ~ /work/(.+(?:\.pdf))$ {
+    alias <%= nginx_root_path %>/documents/$1;
+  }   
+
+  location ~ /work/(.+(?:\.otf))$ {
+    alias <%= nginx_root_path %>/fonts/$1;
+  }   
+
+  location ~ /work/(.+(?:\.(gif|jpg|png)))$ {
+    alias <%= nginx_root_path %>/images/$1;
+  }   
+
+  location ~ /work/(.+(?:\.js))$ {
+    alias <%= nginx_root_path %>/javascripts/$1;
+  }   
+
+  location ~ /work/(.+(?:\.css))$ {
+    alias <%= nginx_root_path %>/stylesheets/$1;
+  }   
+}
