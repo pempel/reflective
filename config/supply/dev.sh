@@ -43,26 +43,6 @@ then
 fi
 
 ###############################################################################
-## Installing libssl-dev
-###############################################################################
-if [[ ! $(dpkg -l | grep libssl-dev | awk '{ print $1 }') == "ii" ]]
-then
-  puts "Installing libssl-dev"
-  sudo apt-get update > /dev/null 2>&1
-  sudo apt-get install -y -qq libssl-dev > /dev/null 2>&1
-fi
-
-###############################################################################
-## Installing apache2-utils
-###############################################################################
-if [[ ! $(dpkg -l | grep apache2-utils | awk '{ print $1 }') == "ii" ]]
-then
-  puts "Installing apache2-utils"
-  sudo apt-get update > /dev/null 2>&1
-  sudo apt-get install -y -qq apache2-utils > /dev/null 2>&1
-fi
-
-###############################################################################
 ## Installing git, make, curl, g++, sshpass
 ###############################################################################
 install "git"
@@ -70,22 +50,6 @@ install "make"
 install "curl"
 install "g++"
 install "sshpass"
-
-###############################################################################
-## Installing node.js and npm without sudo
-###############################################################################
-if [[ ! -d "$HOME/opt" ]]
-then
-  puts "Installing node.js and npm without sudo"
-  git clone https://github.com/joyent/node.git ~/.node > /dev/null 2>&1
-  cd ~/.node
-  mkdir ~/opt
-  export PREFIX=~/opt; ./configure > /dev/null 2>&1
-  make > /dev/null 2>&1
-  make install > /dev/null 2>&1
-  echo 'export PATH="$HOME/opt/bin:$PATH"' >> ~/.bashrc
-fi
-export PATH="$HOME/opt/bin:$PATH"
 
 ###############################################################################
 ## Installing rbenv, rbenv-binstubs, ruby-build
@@ -106,14 +70,15 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 ###############################################################################
-## Installing ruby
+## Installing libssl-dev, libreadline-dev, apache2-utils, ruby
 ###############################################################################
 cd $HOME
 rbenv versions | grep $RUBY_VERSION > /dev/null
 if [[ $? -ne 0 ]]
 then
-  puts "Installing ruby $RUBY_VERSION"
-  rbenv install $RUBY_VERSION > /dev/null 2>&1
+  puts "Installing libssl-dev, libreadline-dev, apache2-utils, ruby $RUBY_VERSION"
+  sudo apt-get install -y -qq libssl-dev libreadline-dev apache2-utils > /dev/null 2>&1
+  curl -fsSL https://gist.github.com/mislav/a18b9d7f0dc5b9efc162.txt | rbenv install --patch $RUBY_VERSION > /dev/null
 fi
 
 ###############################################################################
@@ -121,7 +86,6 @@ fi
 ###############################################################################
 if [[ ! -d "$APP_PATH/.bundle" ]]
 then
-  sudo mkdir -p $APP_PATH/.bundle
   cd $APP_PATH
   gem list | grep bundler > /dev/null 2>&1
   if [[ $? -ne 0 ]]
@@ -132,6 +96,22 @@ then
   puts "Installing ruby gems"
   bundle install --path .bundle --binstubs .bundle/bin > /dev/null 2>&1
 fi
+
+###############################################################################
+## Installing node.js and npm without sudo
+###############################################################################
+if [[ ! -d "$HOME/opt" ]]
+then
+  puts "Installing node.js and npm without sudo"
+  git clone https://github.com/joyent/node.git ~/.node > /dev/null 2>&1
+  cd ~/.node
+  mkdir ~/opt
+  export PREFIX=~/opt; ./configure > /dev/null 2>&1
+  make > /dev/null 2>&1
+  make install > /dev/null 2>&1
+  echo 'export PATH="$HOME/opt/bin:$PATH"' >> ~/.bashrc
+fi
+export PATH="$HOME/opt/bin:$PATH"
 
 ###############################################################################
 ## Installing npm packages
