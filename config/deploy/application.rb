@@ -1,6 +1,6 @@
 require "mina/git"
 require_relative "environment"
-require_relative "extra"
+require_relative "extras"
 require_relative "grunt"
 require_relative "nginx"
 require_relative "ssh"
