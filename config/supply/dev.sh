@@ -70,15 +70,16 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 ###############################################################################
-## Installing libssl-dev, libreadline-dev, apache2-utils, ruby
+## Installing build-essential libssl-dev, libreadline-dev, apache2-utils, ruby
 ###############################################################################
 cd $HOME
-rbenv versions | grep $RUBY_VERSION > /dev/null
+rbenv versions | grep $RUBY_VERSION > /dev/null 2>&1
 if [[ $? -ne 0 ]]
 then
-  puts "Installing libssl-dev, libreadline-dev, apache2-utils, ruby $RUBY_VERSION"
-  sudo apt-get install -y -qq libssl-dev libreadline-dev apache2-utils > /dev/null 2>&1
-  curl -fsSL https://gist.github.com/mislav/a18b9d7f0dc5b9efc162.txt | rbenv install --patch $RUBY_VERSION > /dev/null
+  puts "Installing build-essential, libssl-dev, libreadline-dev, apache2-utils, ruby $RUBY_VERSION"
+  sudo apt-get update > /dev/null 2>&1
+  sudo apt-get install -y -qq build-essential libssl-dev libreadline-dev apache2-utils > /dev/null 2>&1
+  curl -fsSL https://gist.github.com/mislav/a18b9d7f0dc5b9efc162.txt | rbenv install --patch $RUBY_VERSION > /dev/null 2>&1
 fi
 
 ###############################################################################

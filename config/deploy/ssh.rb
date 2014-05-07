@@ -17,7 +17,7 @@ namespace :ssh do
 
       if password.nil? or password.empty?
         system %{
-          cat ~/.ssh/config 2>/dev/null | grep #{domain} > /dev/null;
+          cat ~/.ssh/config 2>/dev/null | grep #{domain} > /dev/null 2>&1;
           if [ $? -ne 0 ]; then
             echo "----->   Failed. Try again with password.";
             exit;
