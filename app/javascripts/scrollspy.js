@@ -24,7 +24,7 @@ $(document).ready(function() {
     header.find("i").css({"visibility": "visible"});
     animating = true;
     setTimeout(function() { animating = false }, 1000);
-    $("body").animate({scrollTop: headerTop}, 500);
+    $("body").animate({scrollTop: headerTop + "px"}, 500);
   });
 
   $(window).scroll(function() {
