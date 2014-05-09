@@ -6,9 +6,6 @@ $(document).ready(function() {
     if (header.length) { return header }
   });
 
-  window.links = links
-  window.headers = headers
-
   links.click(function(event) {
     event.preventDefault();
     var header = $($(this).find("a").attr("href"));
@@ -24,7 +21,7 @@ $(document).ready(function() {
     header.find("i").css({"visibility": "visible"});
     animating = true;
     setTimeout(function() { animating = false }, 1000);
-    $("body").animate({scrollTop: headerTop + "px"}, 500);
+    $("html, body").animate({scrollTop: headerTop + "px"}, 500);
   });
 
   $(window).scroll(function() {
