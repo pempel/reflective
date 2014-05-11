@@ -6,14 +6,15 @@
     padding-right: 2em;
   }
 
-  header {
+  h1 {
+    color: $header-title-color;
     font-family: "AleksandraC";
+    font-size: 1.7em;
+    padding: .1em 0;
+  }
 
-    h1 {
-      color: $header-title-color;
-      font-size: 1.7em;
-      padding: .1em 0;
-    }
+  h2 {
+    font-family: "AleksandraC";
   }
 
   section {

@@ -273,16 +273,17 @@ body > footer {
   padding-right: 2em;
 }
 /* line 9, ../../app/stylesheets/modules/_details.scss */
-.details header {
-  font-family: "AleksandraC";
-}
-/* line 12, ../../app/stylesheets/modules/_details.scss */
-.details header h1 {
+.details h1 {
   color: white;
+  font-family: "AleksandraC";
   font-size: 1.7em;
   padding: .1em 0;
 }
-/* line 19, ../../app/stylesheets/modules/_details.scss */
+/* line 16, ../../app/stylesheets/modules/_details.scss */
+.details h2 {
+  font-family: "AleksandraC";
+}
+/* line 20, ../../app/stylesheets/modules/_details.scss */
 .details section {
   margin: 1em 0;
 }

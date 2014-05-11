@@ -1,11 +1,10 @@
 mixin details
   section.details
-    img(src="me.jpg")
-    header
-      each name, locale in specifications.author.name.localized
-        h1(lang="#{locale}")!= name
-      each profession, locale in specifications.author.profession.localized
-        h2(lang="#{locale}")!= profession
+    img(src="me.jpg", alt="userpic")
+    each name, locale in specifications.author.name.localized
+      h1(lang="#{locale}")!= name
+    each profession, locale in specifications.author.profession.localized
+      h2(lang="#{locale}")!= profession
     section
       +tags
         +tag(specifications.author, "location", "fa fa-map-marker")
