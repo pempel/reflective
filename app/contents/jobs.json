@@ -418,8 +418,8 @@
     "duration": {
       "numerical": 5,
       "localized": {
-        "en": "from October 2007 to February 2008",
-        "ru": "c октября 2007 по февраль 2008&nbsp;&mdash;&nbsp;5 месяцев"
+        "en": "from October 2007 to February 2008 &mdash; 5 months",
+        "ru": "c октября 2007 по февраль 2008 &mdash; 5 месяцев"
       }
     },
     "position": {

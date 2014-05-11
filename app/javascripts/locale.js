@@ -1,7 +1,7 @@
 function setCurrentLocale(locale) {
   if (typeof locale === "undefined") {
     if (typeof $.cookie(locale) === "undefined") {
-      locale = window.navigator.language;
+      locale = "en";
     } else {
       locale = $.cookie("locale");
     }
@@ -16,7 +16,7 @@ function setCurrentLocale(locale) {
 $(document).ready(function() {
   setCurrentLocale();
   $("#locale-links a").click(function(event) {
-    setCurrentLocale($(event.target).attr("href"));
     event.preventDefault();
+    setCurrentLocale($(event.target).attr("href"));
   });
 });

@@ -1,4 +1,4 @@
-function setTime() {
+function setCurrentTime() {
   var currentDate = new Date();
   var currentTime = currentDate.getTime();
   var currentOffset = currentDate.getTimezoneOffset() * 60 * 1000;
@@ -15,9 +15,9 @@ function setTime() {
 
   document.getElementById("time").innerHTML = hours + ":" + minutes;
 
-  setTimeout(setTime, 1000);
+  setTimeout(setCurrentTime, 1000);
 }
 
 $(window).load(function() {
-  setTime();
+  setCurrentTime();
 });
