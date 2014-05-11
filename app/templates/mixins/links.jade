@@ -1,7 +1,7 @@
-mixin locale-links
-  #locale-links
-    each locale in locales
-      span: a(href="#{locale.code}")!= locale.name
+mixin language-links
+  #language-links
+    each language in languages
+      span: a(href="#{language.code}")!= language.name
 
 mixin account-links
   .account-links
