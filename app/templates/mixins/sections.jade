@@ -45,7 +45,7 @@ mixin examples
 mixin jobs
   section
     +header(sections.jobs)(hr=true)
-    +charts("jobs")
+    +charts(chartGroups.jobs)
     each job in jobs
       article
         +header(job)

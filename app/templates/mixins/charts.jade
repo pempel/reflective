@@ -1,20 +1,10 @@
-mixin data-for-job-charts
-  - each locale in locales
-    - var data = [];
-    - each job in jobs
-      - data.push({"company": job.title.localized[locale.code], "position": job.position.localized[locale.code], "duration": job.duration.numerical})
-    script(type="text/json", lang="#{locale.code}")!= JSON.stringify(data)
-
-mixin charts(subject)
-  .chart(data-chart-name="#{subject}")
-    .chart-data
-      case subject
-        when "jobs": +data-for-job-charts
-    .chart-name
-      each name, locale in charts[subject].name.localized
+mixin charts(chartGroup)
+  .chart-group(data-chart-group-id="#{chartGroup.id}")
+    .chart-group-name
+      each name, locale in chartGroup.name.localized
         span(lang="#{locale}")!= name + ":"
-    each type in charts[subject].types
-      .chart-link(data-chart-id="##{type.id}")
-        each name, locale in type.name.localized
+    each chart in chartGroup.charts
+      .chart-group-link(data-chart-id="#{chart.id}")
+        each name, locale in chart.name.localized
           span(lang="#{locale}")!= name
-    .chart-area
+    .chart

@@ -202,17 +202,17 @@ body > footer {
 }
 
 /* line 1, ../../app/stylesheets/modules/_charts.scss */
-.chart {
+.chart-group {
   margin-top: 1em;
   overflow: hidden;
 }
 /* line 5, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-name {
+.chart-group .chart-group-name {
   float: left;
   margin-right: .7em;
 }
 /* line 10, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-link {
+.chart-group .chart-group-link {
   float: left;
   margin-right: .7em;
   color: #858586;
@@ -221,14 +221,14 @@ body > footer {
   text-decoration: none;
 }
 /* line 15, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-link:hover {
+.chart-group .chart-group-link:hover {
   color: black;
   cursor: pointer;
   border-bottom: dotted 1px;
   text-decoration: none;
 }
 /* line 16, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-link.active {
+.chart-group .chart-group-link.active {
   color: black;
   background-color: #e0e0e0;
   cursor: default;
@@ -236,27 +236,27 @@ body > footer {
   text-decoration: none;
 }
 /* line 19, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-area {
+.chart-group .chart {
   margin: 2em 0 1em 0;
 }
 /* line 23, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-area svg .bar {
+.chart-group .chart svg .bar {
   fill: #818181;
 }
 /* line 27, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-area svg .label {
-  fill: #e0e0e0;
-}
-/* line 31, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-area svg .months {
+.chart-group .chart svg .bar-text {
   font-family: "AleksandraC";
   font-size: 12px;
   text-anchor: end;
   dominant-baseline: middle;
   fill: white;
 }
+/* line 35, ../../app/stylesheets/modules/_charts.scss */
+.chart-group .chart svg .label {
+  fill: #e0e0e0;
+}
 /* line 39, ../../app/stylesheets/modules/_charts.scss */
-.chart .chart-area svg .company {
+.chart-group .chart svg .label-text {
   font-family: "AleksandraC";
   font-size: 14px;
   text-anchor: start;

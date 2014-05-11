@@ -1,13 +1,14 @@
 {
-  "charts": {
+  "chartGroups": {
     "jobs": {
+      "id": "jobs",
       "name": {
         "localized": {
           "en": "49 months",
           "ru": "49 месяцев"
         }
       },
-      "types": [{
+      "charts": [{
         "id": "chart-by-companies",
         "name": {
           "localized": {

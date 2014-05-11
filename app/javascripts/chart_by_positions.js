@@ -1,57 +1,25 @@
-var positions = [
-  "Rails Developer",
-  "Django Developer",
-  "C++ Developer",
-  "C# Developer",
-];
+function ChartByPositions() {
+  Chart.call(this, "chart-by-positions", "jobs");
+}
 
-var dataset = [1 + 4 + 4 + 17, 5 + 9, 4, 5],
-    chartWidth = 600,
-    chartHeight = 125,
-    labelWidth = 138,
-    barMargin = 5,
-    barWidth = (chartWidth - labelWidth) / Math.max.apply(null, dataset),
-    barHeight = (chartHeight - barMargin * (dataset.length - 1)) / dataset.length,
-    svg = d3.select(".chart-area")
-            .append("svg")
-            .attr("id", "chart-by-positions")
-            .attr("width", chartWidth)
-            .attr("height", chartHeight);
+ChartByPositions.prototype = Object.create(Chart.prototype, {
+  constructor: {
+    configurable: true,
+    enumerable: true,
+    value: ChartByPositions,
+    writable: true
+  }
+});
 
-svg.selectAll("rect")
-   .data(dataset)
-   .enter()
-   .append("rect")
-   .attr("class", "bar")
-   .attr("x", 0)
-   .attr("y", function(d, i) { return i * (barHeight + barMargin) })
-   .attr("width", function(d, i) { return d * barWidth + labelWidth })
-   .attr("height", function(d, i) { return barHeight });
+ChartByPositions.prototype.labels = function() {
+  return [
+    "Ruby on Rails Developer",
+    "Django Developer",
+    "C++ Developer",
+    "C# Developer"
+  ];
+};
 
-svg.selectAll(".label")
-   .data(dataset)
-   .enter()
-   .append("rect")
-   .attr("class", "label")
-   .attr("x", 0)
-   .attr("y", function(d, i) { return i * (barHeight + barMargin) })
-   .attr("width", labelWidth)
-   .attr("height", barHeight);
-
-svg.selectAll(".months")
-   .data(dataset)
-   .enter()
-   .append("text")
-   .attr("class", "months")
-   .text(function(d, i) { return d })
-   .attr("x", function(d, i) { return d * barWidth + labelWidth - 10 })
-   .attr("y", function(d, i) { return i * (barHeight + barMargin) + barHeight / 2 });
-
-svg.selectAll(".company")
-   .data(companies)
-   .enter()
-   .append("text")
-   .attr("class", "company")
-   .text(function(d, i) { return positions[i] })
-   .attr("x", function(d, i) { return 10 })
-   .attr("y", function(d, i) { return i * (barHeight + barMargin) + barHeight / 2 });
+ChartByPositions.prototype.values = function() {
+  return [1 + 4 + 4 + 17, 5 + 9, 4, 5];
+};

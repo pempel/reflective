@@ -1,13 +1,13 @@
-.chart {
+.chart-group {
   margin-top: 1em;
   overflow: hidden;
 
-  .chart-name {
+  .chart-group-name {
     float: left;
     margin-right: .7em;
   }
 
-  .chart-link {
+  .chart-group-link {
     float: left;
     margin-right: .7em;
 
@@ -16,7 +16,7 @@
     &.active { @include active-link($main-color, #e0e0e0); }
   }
 
-  .chart-area {
+  .chart {
     margin: 2em 0 1em 0;
 
     svg {
@@ -24,11 +24,7 @@
         fill: rgb(129, 129, 129);
       }
 
-      .label {
-        fill: rgb(224, 224, 224);
-      }
-
-      .months {
+      .bar-text {
         font-family: "AleksandraC";
         font-size: 12px;
         text-anchor: end;
@@ -36,7 +32,11 @@
         fill: rgb(255, 255, 255);
       }
 
-      .company {
+      .label {
+        fill: rgb(224, 224, 224);
+      }
+
+      .label-text {
         font-family: "AleksandraC";
         font-size: 14px;
         text-anchor: start;
