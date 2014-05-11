@@ -40,7 +40,7 @@ namespace :environment do
     set :user,              "depp"
     set :domain,            "#{app}-live"
     set :address,           "95.85.41.230"
-    set :branch,            "development"
+    set :branch,            "master"
   end
 end
 
